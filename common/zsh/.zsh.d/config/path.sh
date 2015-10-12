@@ -68,18 +68,6 @@ add-path-if-exists before-tail "$HOME/bin.local/activator"
 
 
 ###
-### Unused
-###
-
-# export PATH=$PATH:$HOME/.rvm/bin ; [ -s $HOME/.rvm/scripts/rvm ] && source $HOME/.rvm/scripts/rvm
-# export PATH=$PATH:~/Library/Android/sdk:~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools
-# export PATH="$HOME/perl5/bin:$PATH"
-# export PERL5LIB="$HOME/perl5/lib/perl5"
-# export PATH="/opt/local/lib/mysql56/bin:$PATH"
-# [ -d $HOME/bin/sshfsexec ] && PATH=$HOME/bin/sshfsexec:$PATH
-
-
-###
 ### Finalize
 ###
 

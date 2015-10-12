@@ -92,9 +92,6 @@ alias gmplayer=' gmplayer'
 
 alias xdvi=' xdvi -expert'
 
-#alias decolorize="sed -e 's/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g'"
-#alias decolorize="sed -e 's/\x1B\[\([0-9]{1,2}\(;[0-9]{1,2}\)?\)?[m|K]//g'"
-
 
 #
 ###
@@ -103,10 +100,4 @@ alias xdvi=' xdvi -expert'
 
 # bugs here
 alias akill="ps -x | canything | awk '{print \$1}' | xargs kill -9"
-# alias akillhoge="ps -x | grep gmplayer | awk -F' ' '{print $1}'"
-# alias akillfoo="cat hoge | awk '{print $1}'"
-# alias akillhoge="ps -x | canything | tee tea | awk '{print $1}' | xargs kill -9"
-# alias akillhoge="ps -x | canything | sed 's/ .*$//' | cat | xargs kill -9"
-# alias akill="ps -x | canything | sed 's/ .*$//' | xargs kill -9"
-# alias akill="ps -x | canything | cut -d' ' -f1 | xargs kill -9"
 alias mkill="xprop | grep _NET_WM_PID | cut -d = -f 2 | xargs kill -9"

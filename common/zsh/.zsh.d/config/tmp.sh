@@ -32,13 +32,6 @@ else
   # export LC_IDENTIFICATION="ja_JP.UTF-8"
 fi
 
-PATH=$PATH:$HOME/.cabal/bin:$HOME/.cask/bin:$HOME/.cim/bin:$HOME/.shelly/bin:$HOME/local/bin
-#PATH=$PATH:$HOME/.rvm/bin ; [ -s $HOME/.rvm/scripts/rvm ] && source $HOME/.rvm/scripts/rvm
-CIM_HOME="$HOME/.cim"; [ -s $HOME/.cim/init.sh ] && source $HOME/.cim/init.sh
-PATH=$HOME/.cask/bin:$PATH
-[ -d $HOME/bin ] && PATH=$HOME/bin:$PATH
-
-
 bindkey -e
 setopt auto_pushd
 setopt pushd_ignore_dups
@@ -564,9 +557,6 @@ alias vag="vagrant"
 alias v="vim"
 setopt brace_ccl
 
-# added for mac
-export PATH=/opt/local/bin:/opt/loca/sbin:$PATH
-export MANPATH=/opt/local/man:$MANPAHH
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
@@ -604,23 +594,10 @@ function exchange-mv () {
     mv $1.exchangemv $2
 }
 
-if [ -d ${HOME}/.anyenv ] ; then
-    export PATH="$HOME/.anyenv/bin:$PATH"
-    eval "$(anyenv init -)"
-    for d in $(ls $HOME/.anyenv/envs/) ; do
-        export PATH="$HOME/.anyenv/envs/$d/shims:$PATH"
-        eval "$($d init -)"
-    done
-fi
 
-#export PATH="$HOME/perl5/bin:$PATH"
-
-#export PATH=$PATH:~/Library/Android/sdk/tools
-export PATH=$PATH:~/Library/Android/sdk:~/Library/Android/sdk/tools:~/Library/Android/sdk/platform-tools
 #export ANDROID_HOME=~/Library/Android/sdk/tools
 
 
-CIM_HOME="$HOME/.cim"; [ -s "$CIM_HOME/init.sh" ] && . "$CIM_HOME/init.sh"
 alias lingr="vim --cmd 'let g:lingr = 1' -c LingrLaunch"
 
 
@@ -628,11 +605,6 @@ alias lingr="vim --cmd 'let g:lingr = 1' -c LingrLaunch"
 PERL_MB_OPT="--install_base \"/Users/takeshi.okada/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/takeshi.okada/perl5"; export PERL_MM_OPT;
 
-export PATH="$HOME/perl5/bin:$PATH"
-export PERL5LIB="$HOME/perl5/lib/perl5"
-export PATH="/opt/local/lib/mysql56/bin:$PATH"
-export GOPATH="$HOME/bin/go"
-export PATH="$GOPATH/bin:$PATH"
 alias p="peco"
 
 
@@ -651,8 +623,6 @@ function peco-select-gitadd() {
 zle -N peco-select-gitadd
 bindkey "^u^a" peco-select-gitadd
 
-
-# [ -d $HOME/bin/sshfsexec ] && PATH=$HOME/bin/sshfsexec:$PATH
 
 
 function peco-git-branch-checkout () {

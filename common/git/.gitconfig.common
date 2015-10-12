@@ -36,6 +36,7 @@
         tool = vimdiff
         algorithm = patience
 [merge]
+        ff = false
         tool = vimdiff3
 [mergetool]
         keepBackup = false

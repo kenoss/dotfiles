@@ -605,8 +605,6 @@ alias lingr="vim --cmd 'let g:lingr = 1' -c LingrLaunch"
 PERL_MB_OPT="--install_base \"/Users/takeshi.okada/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/takeshi.okada/perl5"; export PERL_MM_OPT;
 
-alias p="peco"
-
 
 # From http://petitviolet.hatenablog.com/entry/20140722/1406034439
 function peco-select-gitadd() {
@@ -673,4 +671,19 @@ source ~/local/bin/z-zsh/z.sh
 
 function precmd () {
     z --add "$(pwd -P)"
+}
+
+
+
+function p () {
+    local cmd="$1"
+
+    case "$cmd" in
+        '' )     peco-command ;;
+        'ssh' )  peco-ssh ;;
+    esac
+}
+
+function peco-ssh () {
+    ssh $(grep -E '^Host[[:space:]]+[^*]' ~/.ssh/config | peco | awk '{print $2}')
 }

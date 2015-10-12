@@ -103,36 +103,6 @@ zstyle ':completion:*' list-colors 'di=;36' 'ln=;33' 'ex=32'
 function lsEU() { ls $@ | iconv -f EUC-JP -t UTF-8 }
 
 
-alias man=" man"
-alias iconvEU="iconv -f EUC-JP -t UTF-8"
-alias lse="lsEU -G"
-#alias ls="lsEU -G"
-alias ls="ls -G"
-alias ll='ls -l'
-alias la='ls -A'
-alias lla="ls -l -A"
-alias gls="gls --color"
-alias mkdir="mkdir -p"
-alias tarx="tar xvzf"
-alias tarc="tar cvzf"
-alias top=" top -P"
-
-#alias less=' less'
-#alias lv=' lv'
-alias history=' history'
-#alias cat=' cat'
-alias mplayer=' mplayer'
-alias gmplayer=' gmplayer'
-alias xdvi=' xdvi -expert'
-alias urxvt='LC_ALL=ja_JP.UTF-8 urxvt'
-alias tmux='tmux -u'
-alias ssh='TERM=xterm ssh'
-alias ssh256='ssh'
-
-alias cd=' cd'
-alias ps=' ps'
-alias vimhist=' vim ~/.zsh.d/.zsh_history'
-alias jqless="jq -C '.' | less "
 
 
 #
@@ -170,50 +140,6 @@ bindkey '\^' cdup
 
 
 
-if type lv > /dev/null 2>&1; then
-    ## lvを優先する。
-    export PAGER="lv"
-else
-    ## lvがなかったらlessを使う。
-    export PAGER="less"
-fi
-
-#if [ "$PAGER" = "lv" ]; then
-#    ## -c: ANSIエスケープシーケンスの色付けなどを有効にする。
-#    ## -l: 1行が長くと折り返されていても1行として扱う。
-#    ##     （コピーしたときに余計な改行を入れない。）
-#    export LV="-c -l"
-#fi
-
-## GNU grepがあったら優先して使う。
-if type ggrep > /dev/null 2>&1; then
-    alias grep=ggrep
-fi
-## デフォルトオプションの設定
-export MY_GREP_OPTIONS
-### バイナリファイルにはマッチさせない。
-MY_GREP_OPTIONS="--binary-files=without-match"
-### grep対象としてディレクトリを指定したらディレクトリ内を再帰的にgrepする。
-#MY_GREP_OPTIONS="--directories=recurse $MY_GREP_OPTIONS"
-### 拡張子が.tmpのファイルは無視する。
-MY_GREP_OPTIONS="--exclude=\*.tmp $MY_GREP_OPTIONS"
-## 管理用ディレクトリを無視する。
-if grep --help | grep -q -- --exclude-dir; then
-    MY_GREP_OPTIONS="--exclude-dir=.svn $MY_GREP_OPTIONS"
-    MY_GREP_OPTIONS="--exclude-dir=.git $MY_GREP_OPTIONS"
-    MY_GREP_OPTIONS="--exclude-dir=.deps $MY_GREP_OPTIONS"
-    MY_GREP_OPTIONS="--exclude-dir=.libs $MY_GREP_OPTIONS"
-fi
-### 可能なら色を付ける。
-if grep --help | grep -q -- --color; then
-    MY_GREP_OPTIONS="--color=auto $MY_GREP_OPTIONS"
-fi
-
-alias grep="grep $MY_GREP_OPTIONS"
-
-
-
-export LESS="--no-init --LONG-PROMPT --ignore-case -RF"
 
 
 
@@ -228,9 +154,6 @@ REPORTTIME=3
 ## 「/」も単語区切りとみなす。
 WORDCHARS=${WORDCHARS:s,/,,}
 
-## pushd/popdのショートカット。
-alias pd=" pushd"
-alias po=" popd"
 
 
 
@@ -309,24 +232,11 @@ bindkey "^e" my-expand-abbrev
 
 
 
-alias nicovdl='nicovideo-dl -u aoeui666@gmail.com -p am0nI0ptmcosntdt -x'
 
 
 
 
 
-alias histgrep='history 1 | grep'
-
-function histgrepuniq() {
-    histgrep $1 | sed 's/^ *[0-9]* */  /' | sort -u
-}
-
-alias hisg='histgrep'
-alias hisgu='histgrepuniq'
-
-function hisgl() {
-    histgrep $1 | $PAGER
-}
 
 
 
@@ -428,8 +338,6 @@ bindkey "^y" paste-as-yank
 
 
 
-#alias decolorize="sed -e 's/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g'"
-#alias decolorize="sed -e 's/\x1B\[\([0-9]{1,2}\(;[0-9]{1,2}\)?\)?[m|K]//g'"
 
 
 
@@ -458,10 +366,6 @@ function upload-ical () {
 
 
 
-# TeX
-export BSTINPUT=$HOME/texmf/bibtex/bst
-export BIBINPUT=$HOME/texmf/bibtex/bib
-alias eplatex="/usr/local/texlive/2012/bin/amd64-freebsd/platex"
 
 
 function findgrep () {
@@ -469,18 +373,6 @@ function findgrep () {
 }
 
 
-# bugs here
-alias akill="ps -x | canything | awk '{print \$1}' | xargs kill -9"
-# alias akillhoge="ps -x | grep gmplayer | awk -F' ' '{print $1}'"
-# alias akillfoo="cat hoge | awk '{print $1}'"
-# alias akillhoge="ps -x | canything | tee tea | awk '{print $1}' | xargs kill -9"
-# alias akillhoge="ps -x | canything | sed 's/ .*$//' | cat | xargs kill -9"
-# alias akill="ps -x | canything | sed 's/ .*$//' | xargs kill -9"
-# alias akill="ps -x | canything | cut -d' ' -f1 | xargs kill -9"
-alias mkill="xprop | grep _NET_WM_PID | cut -d = -f 2 | xargs kill -9"
-alias g="git"
-alias vag="vagrant"
-alias v="vim"
 setopt brace_ccl
 
 
@@ -524,7 +416,6 @@ function exchange-mv () {
 #export ANDROID_HOME=~/Library/Android/sdk/tools
 
 
-alias lingr="vim --cmd 'let g:lingr = 1' -c LingrLaunch"
 
 
 # Added by cpan

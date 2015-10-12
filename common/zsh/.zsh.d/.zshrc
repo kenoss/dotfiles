@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
-load-zsh-config path.sh
-load-zsh-config tmp.sh
-load-zsh-config company.sh
+load-zsh-config lib/rprompt-git-current-branch.zsh
+
+load-zsh-config config/path.sh
+load-zsh-config config/tmp.sh
+load-zsh-config config/company.sh

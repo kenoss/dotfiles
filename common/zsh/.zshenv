@@ -4,7 +4,7 @@ ZDOTDIR=$HOME/.zsh.d
 ZCONFDIR=$ZDOTDIR/config
 
 function load-zsh-config () {
-    local file="$ZCONFDIR/$1"
+    local file="$ZDOTDIR/$1"
 
     if [ ! -f "$file" ]; then
         echo "Config file not found: $file"

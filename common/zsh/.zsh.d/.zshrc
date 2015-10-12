@@ -8,6 +8,7 @@ load-zsh-config config/alias.sh
 load-zsh-config config/function-utils.sh
 load-zsh-config config/command-utils.sh
 load-zsh-config config/command-histgrep.sh
+load-zsh-config config/command-peco.sh
 load-zsh-config config/tmp.sh
 load-zsh-config config/bindings.zsh
 load-zsh-config config/company.sh

@@ -7,4 +7,5 @@ load-zsh-config config/env.sh
 load-zsh-config config/alias.sh
 load-zsh-config config/command-histgrep.sh
 load-zsh-config config/tmp.sh
+load-zsh-config config/bindings.zsh
 load-zsh-config config/company.sh

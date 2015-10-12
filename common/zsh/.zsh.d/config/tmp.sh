@@ -277,63 +277,6 @@ function portsearch() {
 
 
 
-#function copy-line-as-kill() {
-#    zle kill-line
-#    if which xclip >/dev/null 2>&1 ; then # UNIX
-#        # 何故かエラーに. 仕方ないので文字化けするが xclip を使う.
-#        #    print -rn $CUTBUFFER | xsel --copy  --selection CLIPBOARD
-#        print -rn $CUTBUFFER | xclip -i
-#    elif which pbcopy >/dev/null 2>&1 ; then # Mac
-#        print -rn $CUTBUFFER | pbcopy
-#    elif which putclip >/dev/null 2>&1 ; then # Cygwin
-#        print -rn $CUTBUFFER | putclip
-#    fi
-#}
-#zle -N copy-line-as-kill
-#
-#function paste-as-yank() {
-#    if which xsel >/dev/null 2>&1 ; then # UNIX
-#        LBUFFER=$LBUFFER"`xsel --paste`"
-#    elif which pbpaste >/dev/null 2>&1 ; then # Mac
-#        LBUFFER=$LBUFFER"`pbpaste`"
-#    elif which getclip >/dev/null 2>&1 ; then # Cygwin
-#        LBUFFER=$LBUFFER"`getclip`"
-#    fi
-#}
-#zle -N paste-as-yank
-#
-
-### kill and yank
-
-if which xclip >/dev/null 2>&1 ; then # UNIX
-    # 何故かエラーに. 仕方ないので文字化けするが xclip を使う.
-    # print -rn $CUTBUFFER | xsel --copy  --selection CLIPBOARD
-    MYKILLCMD="xclip -i"
-    MYYANKCMD="xsel --paste"
-elif which pbcopy >/dev/null 2>&1 ; then # Mac
-    MYKILLCMD="pbcopy"
-    MYYANKCMD="pbpaste"
-elif which putclip >/dev/null 2>&1 ; then # Cygwin
-    MYKILLCMD="putclip"
-    MYYANKCMD="getclip"
-fi
-
-function copy-line-as-kill() {
-    zle kill-line
-    print -rn $CUTBUFFER | ${=MYKILLCMD}
-}
-zle -N copy-line-as-kill
-function paste-as-yank() {
-    LBUFFER=$LBUFFER"$(${=MYYANKCMD})"
-}
-zle -N paste-as-yank
-
-bindkey "^k" copy-line-as-kill
-bindkey "^y" paste-as-yank
-
-
-
-
 
 
 

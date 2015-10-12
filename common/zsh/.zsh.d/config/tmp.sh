@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-ZDOTDIR=~/.zsh.d
 source $ZDOTDIR/256colorlib.zsh
 # [ -f $ZDOTDIR/.zshrc.$(uname) ] && source $ZDOTDIR/.zshrc.$(uname)
 

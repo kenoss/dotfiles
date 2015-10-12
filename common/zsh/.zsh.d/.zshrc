@@ -2,3 +2,4 @@
 
 load-zsh-config path.sh
 load-zsh-config tmp.sh
+load-zsh-config company.sh

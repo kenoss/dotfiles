@@ -661,6 +661,26 @@ zle -N peco-git-new-branch-with-base
 bindkey '^u^n' peco-git-new-branch-with-base
 
 
+function peco-git-select-branch () {
+    local selected_branch_name="$(git branch -a | peco | sed 's/^\*/ /' | tr -d ' ')"
+    case "$selected_branch_name" in
+        *-\>* )
+            selected_branch_name="$(echo ${selected_branch_name} | perl -ne 's|^.*-> *?(.*)$|\1|;print')";;
+        remotes* )
+            selected_branch_name="$(echo ${selected_branch_name} | perl -ne 's|^.*?remotes/(.*)$|\1|;print')";;
+    esac
+    if [ -n "$selected_branch_name" ]; then
+        LBUFFER="$(echo ${LBUFFER} | sed -e 's/ *$//') ${selected_branch_name}"
+        RBUFFER="${RBUFFER}"
+    fi
+    zle clear-screen
+}
+zle -N peco-git-select-branch
+
+bindkey '^u^u' peco-git-select-branch
+
+
+
 PATH=$PATH:"$HOME/bin.local/activator"
 
 export LC_ALL=ja_JP.UTF-8

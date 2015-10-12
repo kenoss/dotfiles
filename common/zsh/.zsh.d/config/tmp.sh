@@ -666,3 +666,11 @@ bindkey '^u^n' peco-git-new-branch-with-base
 PATH=$PATH:"$HOME/bin.local/activator"
 
 export LC_ALL=ja_JP.UTF-8
+
+
+
+source ~/local/bin/z-zsh/z.sh
+
+function precmd () {
+    z --add "$(pwd -P)"
+}

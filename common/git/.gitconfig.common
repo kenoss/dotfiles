@@ -1,0 +1,50 @@
+# -*- mode: gitconfig -*-
+
+[color]
+        ui = auto
+[alias]
+        s = status --branch --short
+        st = status --branch --short
+        l = log --date=short --decorate=short --pretty=format:'%C(yellow)%h %C(reset)%cd %C(blue)%cn %C(red)%d %C(reset)%s'
+        com = commit
+        b = branch
+        br = branch
+        cho = checkout
+        mt = mergetool
+        chp = cherry-pick -n
+        d = diff
+        dns = diff --name-status
+        dt = difftool -y
+        # Word-wise diff, rather than line-wise.
+        difff = diff --word-diff
+        # Pretty graph.
+        gr    = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %C(reset)%cd %C(blue)%cn %C(red)%d %C(reset)%s'
+        gra   = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %C(reset)%cd %C(blue)%cn %C(red)%d %C(reset)%s' --all
+        gr-test = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+        # Inverse of `~`.
+        first-child = "!f() { git log  --reverse --ancestry-path --pretty=%H $1..${2:-HEAD} | head -1; }; f"
+        cho-fc = "!git checkout $(git first-child HEAD master)"
+        # Do not show untracked files.  Show not staged and staged.
+        stt = status -uno
+        delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+        brom = !git fetch origin master && git checkout -t origin/master -b
+[push]
+        default = current
+[branch]
+        autosetupmerge = false
+[diff]
+        tool = vimdiff
+        algorithm = patience
+[merge]
+        tool = vimdiff3
+[mergetool]
+        keepBackup = false
+[mergetool "vimdiff3"]
+        cmd = git_merge_wrapper3 \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+
+
+[url "git@github.com:"]
+        pushinsteadof = "https://github.com/"
+        pushinsteadof = "git://github.com/"
+[url "git@github.com:USERNAME/"]
+        insteadof = gh:

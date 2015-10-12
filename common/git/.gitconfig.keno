@@ -1,0 +1,7 @@
+# -*- mode: gitconfig -*-
+
+[include]
+        path = .gitconfig.common
+[user]
+        name = Ken OKADA
+        email = keno.ss57@gmail.com

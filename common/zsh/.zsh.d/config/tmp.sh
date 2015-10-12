@@ -727,3 +727,16 @@ function curl-jsonrpc-request () {
          -d $json \
          ${@:4} \
 }
+
+
+function install-git-config () {
+    local conf_dir=~/git.keno/dotfiles/common/git
+    local conf_path_common="$conf_dir/.gitconfig.common"
+    local conf_path_name="$conf_dir/.gitconfig.$1"
+
+    if [ ! -f "$conf_path_name" ]; then
+        echo "Config file not found: $conf_path_name"
+    else
+        (cd ~/ > /dev/null ; ln -sf "$conf_path_common" ; ln -sf "$conf_path_name" ~/.gitconfig)
+    fi
+}

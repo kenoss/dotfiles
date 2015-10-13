@@ -238,11 +238,3 @@ PERL_MM_OPT="INSTALL_BASE=/Users/takeshi.okada/perl5"; export PERL_MM_OPT;
 PATH=$PATH:"$HOME/bin.local/activator"
 
 export LC_ALL=ja_JP.UTF-8
-
-
-
-source ~/local/bin/z-zsh/z.sh
-
-function precmd () {
-    z --add "$(pwd -P)"
-}

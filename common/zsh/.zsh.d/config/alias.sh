@@ -70,6 +70,7 @@ alias cd=' cd'
 alias ps=' ps'
 alias pd=" pushd"
 alias po=" popd"
+alias dirs=" dirs | tr ' ' '\n'"
 
 alias g="git"
 alias v="vim"

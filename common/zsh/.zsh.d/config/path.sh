@@ -49,27 +49,6 @@ if [ -d "${HOME}/.anyenv" ] ; then
     eval "$(anyenv init -)"
 fi
 
-
-add-path-if-exists after-tail "$HOME/Library/Python/2.7/bin"
-
-
-function add-python-bin-path-for-powerline () {
-    local version
-
-    if ! type pyenv > /dev/null; then
-       echo 'pyenv not found'
-    else
-        version=$(pyenv version | cut -d' ' -f 1)
-        if [[ "$version" =~ ^[0-9]\.[0-9]\.[0-9]$ ]]; then
-            add-path-if-exists after-tail "$HOME/.anyenv/envs/pyenv/versions/$version/bin"
-        else
-            echo 'pyenv setting is not effective for powerline'
-        fi
-    fi
-}
-
-add-python-bin-path-for-powerline
-
 # Emacs Cask
 add-path-if-exists after-tail  "$HOME/.cask/bin"
 

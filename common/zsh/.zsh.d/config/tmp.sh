@@ -3,37 +3,6 @@
 source $ZDOTDIR/256colorlib.zsh
 # [ -f $ZDOTDIR/.zshrc.$(uname) ] && source $ZDOTDIR/.zshrc.$(uname)
 
-bindkey -e
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#
-#bindkey "^P" history-beginning-search-backward-end
-#bindkey '^s' history-beginning-search-forward
-#bindkey '^S' history-beginning-search-forward
-autoload -Uz history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^P" history-beginning-search-backward-end
-bindkey "^N" history-beginning-search-forward-end
-bindkey '^R' history-incremental-pattern-search-backward
-bindkey '^S' history-incremental-pattern-search-forward
-
-
 
 function cdup() {
     if [ -z "$BUFFER" ]; then

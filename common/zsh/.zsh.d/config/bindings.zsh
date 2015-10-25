@@ -1,5 +1,23 @@
 # -*- mode: shell-script -*-
 
+
+# Emacs like key bindings
+bindkey -e
+
+
+# Search and move
+#bindkey "^P" history-beginning-search-backward-end
+#bindkey '^s' history-beginning-search-forward
+#bindkey '^S' history-beginning-search-forward
+autoload -Uz history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
+bindkey '^R' history-incremental-pattern-search-backward
+bindkey '^S' history-incremental-pattern-search-forward
+
+
 # Kill and yank
 load-zsh-config config/feature-kill-yank.zsh
 bindkey "^k" copy-line-as-kill

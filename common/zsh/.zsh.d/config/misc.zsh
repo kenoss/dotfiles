@@ -55,16 +55,17 @@ setopt interactive_comments
 setopt noautoremoveslash
 
 
-## --prefix=~/localというように「=」の後でも
-## 「~」や「=コマンド」などのファイル名展開を行う。
+# Expand path after '=' like `--prefix=~/local`
 setopt magic_equal_subst
 
-## 実行したプロセスの消費時間が3秒以上かかったら
-## 自動的に消費時間の統計情報を表示する。
+# Print statistics of process if command takes more than 3 seconds.
 REPORTTIME=3
 
-## 「/」も単語区切りとみなす。
+## Regard '/' as word separator.
 WORDCHARS=${WORDCHARS:s,/,,}
+
+
+function cd() { builtin cd $@ && ls }
 
 
 #
@@ -108,11 +109,6 @@ zshaddhistory() {
 }
 
 
-
-#function cd() { builtin cd $@ && ls }
-function chpwd() { ls }
-
-
 #
 ###
 ### z.sh
@@ -133,7 +129,6 @@ function precmd () {
 setopt prompt_subst
 export PROMPT='%F{red}%D{%H:%M:%S} ${USER}@${HOSTNAME} %! %(!.#.$)%k%f '
 export PROMPT2='%F{red}         ${USER}@${HOSTNAME} %! >%k%f '
-#export RPROMPT='%F{red}[%f`rprompt-git-current-branch`%~%F{red}]%f'
 
 
 #
@@ -141,7 +136,5 @@ export PROMPT2='%F{red}         ${USER}@${HOSTNAME} %! >%k%f '
 ### ls
 ###
 
-export LSCOLORS=gxdxcxdxfxegedabagacad
 export LSCOLORS=gxdxxxxxcxxAxAcAcAgAgA
-#export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
 zstyle ':completion:*' list-colors 'di=;36' 'ln=;33' 'ex=32'

@@ -27,13 +27,6 @@ function upload-ical () {
 
 
 
-
-
-
-
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 function refrect-vbox-win () {
     local VBOXHOME=~/VirtualBox/sharedirs/WHSallread/home
     rsync -avL ~/.vimperator $VBOXHOME/
@@ -60,20 +53,3 @@ function eplatex-pdf-view(){
     local filesans="${1%.*}"
     eplatex-pdf "$filesans" && evince "$filesans.pdf"
 }
-
-
-
-#export ANDROID_HOME=~/Library/Android/sdk/tools
-
-
-
-
-# Added by cpan
-PERL_MB_OPT="--install_base \"/Users/takeshi.okada/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/takeshi.okada/perl5"; export PERL_MM_OPT;
-
-
-
-
-
-PATH=$PATH:"$HOME/bin.local/activator"

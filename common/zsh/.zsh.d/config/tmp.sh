@@ -59,3 +59,12 @@ function eplatex-pdf-view(){
     local filesans="${1%.*}"
     eplatex-pdf "$filesans" && evince "$filesans.pdf"
 }
+
+
+#
+###
+### Powerline
+###
+
+powerline-daemon -q
+source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh

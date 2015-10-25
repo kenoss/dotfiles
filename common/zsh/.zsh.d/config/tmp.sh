@@ -34,6 +34,12 @@ function refrect-vbox-win () {
     cp -a ~/.vimperatorrc ~/VirtualBox/sharedirs/WHSallread/home/vimperator/
 }
 
+
+#
+###
+### TeX
+###
+
 UPLATEX=/usr/local/texlive/2012/bin/amd64-freebsd/uplatex
 EPLATEX=/usr/local/texlive/2012/bin/amd64-freebsd/platex
 DVIPDFMX=/usr/local/texlive/2012/bin/amd64-freebsd/dvipdfmx

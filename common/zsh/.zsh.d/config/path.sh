@@ -49,6 +49,9 @@ if [ -d "${HOME}/.anyenv" ] ; then
     eval "$(anyenv init -)"
 fi
 
+# For powerline
+add-path-if-exists after-tail "$HOME/.local/bin"
+
 # Emacs Cask
 add-path-if-exists after-tail  "$HOME/.cask/bin"
 

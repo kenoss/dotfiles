@@ -4,20 +4,6 @@ source $ZDOTDIR/256colorlib.zsh
 # [ -f $ZDOTDIR/.zshrc.$(uname) ] && source $ZDOTDIR/.zshrc.$(uname)
 
 
-function cdup() {
-    if [ -z "$BUFFER" ]; then
-        echo
-        cd ..
-        zle reset-prompt
-    else
-        LBUFFER=$LBUFFER"^"
-    fi
-}
-zle -N cdup
-bindkey '\^' cdup
-
-
-
 function upload-ical () {
     local DIR=~/org/calendars
     emacs -batch -l ~/.emacs.d/init.d/50-org-mode.el -eval '(my-org-export-icalendar)'

@@ -23,25 +23,21 @@ if type ggrep > /dev/null 2>&1; then
     alias grep=ggrep
 fi
 
-export MY_GREP_OPTIONS
+export MY_GREP_OPTIONS=''
 
-MY_GREP_OPTIONS="--binary-files=without-match"
-
-# Recursive grep on directories
-MY_GREP_OPTIONS="--directories=recurse $MY_GREP_OPTIONS"
-
+MY_GREP_OPTIONS='--binary-files=without-match'
 MY_GREP_OPTIONS="--exclude=\*.tmp $MY_GREP_OPTIONS"
 
-if grep --help | grep -q -- --exclude-dir; then
+if command grep --help | command grep -q -- --exclude-dir; then
     MY_GREP_OPTIONS="--exclude-dir=.svn $MY_GREP_OPTIONS"
     MY_GREP_OPTIONS="--exclude-dir=.git $MY_GREP_OPTIONS"
-    MY_GREP_OPTIONS="--exclude-dir=.deps $MY_GREP_OPTIONS"
-    MY_GREP_OPTIONS="--exclude-dir=.libs $MY_GREP_OPTIONS"
 fi
 
-if grep --help | grep -q -- --color; then
+if command grep --help | command grep -q -- --color; then
     MY_GREP_OPTIONS="--color=auto $MY_GREP_OPTIONS"
 fi
+
+export MY_GREP_OPTIONS
 
 alias grep="grep $MY_GREP_OPTIONS"
 

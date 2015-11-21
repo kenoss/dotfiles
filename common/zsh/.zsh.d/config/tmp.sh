@@ -68,3 +68,5 @@ function eplatex-pdf-view(){
 
 powerline-daemon -q
 source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+PS1="$PS1
+$ "

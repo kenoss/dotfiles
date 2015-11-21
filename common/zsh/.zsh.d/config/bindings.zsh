@@ -32,3 +32,7 @@ bindkey "^u^a" peco-select-gitadd
 bindkey '^u^b' peco-git-branch-checkout
 bindkey '^u^n' peco-git-new-branch-with-base
 bindkey '^u^u' peco-git-select-branch
+
+
+# peco ghq
+bindkey '^u^o' peco-ghq

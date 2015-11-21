@@ -69,6 +69,14 @@ add-path-if-exists before-tail "$HOME/.cabal/bin"
 # Scala
 add-path-if-exists before-tail "$HOME/bin.local/activator"
 
+# Java
+if type java > /dev/null; then
+    export JAVA_HOME=$(/usr/libexec/java_home)
+fi
+
+add-path-if-exists before-tail "$HOME/.lein"
+
+
 
 ###
 ### Finalize

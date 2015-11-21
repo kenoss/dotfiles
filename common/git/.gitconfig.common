@@ -26,7 +26,7 @@
         cho-fc = "!git checkout $(git first-child HEAD master)"
         # Do not show untracked files.  Show not staged and staged.
         stt = status -uno
-        delete-merged-branches = !git branch --merged | grep -v \\* | xargs -I % git branch -d %
+        delete-merged-branches = "!f() { git branch --merged ${1:-HEAD} | grep -v \\* | xargs -I % git branch -D % ; }; f"
         brom = !git fetch origin master && git checkout -t origin/master -b
 [push]
         default = current

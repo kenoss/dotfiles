@@ -20,7 +20,8 @@
         # Word-wise diff, rather than line-wise.
         difff = diff --word-diff
         # Pretty graph.
-        gr    = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %C(reset)%cd %C(blue)%cn %C(red)%d %C(reset)%s'
+        gr    = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %C(reset)%cd %C(blue)%cn %C(red)%d %C(reset)%s' -20
+        grl   = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %C(reset)%cd %C(blue)%cn %C(red)%d %C(reset)%s'
         gra   = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %C(reset)%cd %C(blue)%cn %C(red)%d %C(reset)%s' --all
         gr-test = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
         # Inverse of `~`.

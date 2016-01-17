@@ -34,5 +34,9 @@ bindkey '^u^n' peco-git-new-branch-with-base
 bindkey '^u^u' peco-git-select-branch
 
 
+# peco tmux
+bindkey '^u^l' peco-tmux-select-window
+
+
 # peco ghq
 bindkey '^u^o' peco-ghq

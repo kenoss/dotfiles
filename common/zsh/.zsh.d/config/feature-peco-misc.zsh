@@ -1,5 +1,17 @@
 #
 ###
+### peco tmux
+###
+
+function peco-tmux-select-window () {
+    local current=$(tmux list-windows | grep active | cut -d: -f 1)
+    local n=$(tmux list-window | peco --initial-index $current | cut -d: -f 1)
+    if [ -n "$n" ]; then
+        tmux select-window -t $n
+    fi
+}
+
+zle -N peco-tmux-select-window
 ### peco ghq
 ###
 

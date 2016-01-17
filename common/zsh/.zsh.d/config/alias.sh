@@ -107,3 +107,6 @@ alias mkill="xprop | grep _NET_WM_PID | cut -d = -f 2 | xargs kill -9"
 
 export KEU_CHROME_EXECUTABLE='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
 alias peco-git-merge-commit-url-open="peco-git-merge-commit-url | xargs $KEU_CHROME_EXECUTABLE"
+
+
+alias js-beautify-replace='js-beautify -rn'

@@ -1,0 +1,156 @@
+# -*- mode: shell-script; coding: utf-8 -*-
+
+# This is the default .slate file.
+# If no ~/.slate file exists this is the file that will be used.
+
+config keyboardLayout dvorak
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+config windowHintsIgnoreHiddenWindows false
+config windowHintsShowIcons true
+# config windowHintsSpread true
+
+alias showNormalHint hint AOEUIDHTNSYXFBPKGMCW
+
+# # Resize Bindings
+# bind right:alt       resize +10% +0
+# bind left:alt        resize -10% +0
+# bind up:alt          resize +0   -10%
+# bind down:alt        resize +0   +10%
+# bind right:ctrl;alt  resize -10% +0 bottom-right
+# bind left:ctrl;alt   resize +10% +0 bottom-right
+# bind up:ctrl;alt     resize +0   +10% bottom-right
+# bind down:ctrl;alt   resize +0   -10% bottom-right
+
+# # Push Bindings
+# bind right:ctrl;cmd  push right bar-resize:screenSizeX/3
+# bind left:ctrl;cmd   push left  bar-resize:screenSizeX/3
+# bind up:ctrl;cmd     push up    bar-resize:screenSizeY/2
+# bind down:ctrl;cmd   push down  bar-resize:screenSizeY/2
+
+# # Nudge Bindings
+# bind right:shift;alt nudge +10% +0
+# bind left:shift;alt  nudge -10% +0
+# bind up:shift;alt    nudge +0   -10%
+# bind down:shift;alt  nudge +0   +10%
+
+# # Throw Bindings
+# bind 1:ctrl;alt         throw 0 resize
+# bind 2:ctrl;alt         throw 1 resize
+# bind 3:ctrl;alt         throw 2 resize
+# bind right:ctrl;alt;cmd throw right resize
+# bind left:ctrl;alt;cmd  throw left  resize
+# bind up:ctrl;alt;cmd    throw up    resize
+# bind down:ctrl;alt;cmd  throw down  resize
+
+# # Focus Bindings
+# bind right:cmd    focus right
+# bind left:cmd     focus left
+# bind up:cmd       focus up
+# bind down:cmd     focus down
+# bind up:cmd;alt   focus behind
+# bind down:cmd;alt focus behind
+
+# # Window Hints
+# bind esc:cmd hint
+
+
+
+# Reload
+bind r:ctrl;alt;cmd relaunch
+
+# Hiper key
+# alias hyper alt
+alias hyper alt;cmd
+# alias hyper ctrl;alt;cmd
+
+# Abstract positions
+alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
+alias lefthalf  move screenOriginX-screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+alias leftmore  move screenOriginX;screenOriginY               screenSizeX*3/4;screenSizeY
+alias rightmore move screenOriginX+screenSizeX/4;screenOriginY screenSizeX*3/4;screenSizeY
+alias seq-more chain ${leftmore} | ${rightmore}
+# alias full-left-out  sequence ${full} | nudge -50% +0
+# alias full-right-out sequence ${full} | nudge +50% +0
+# alias seq-full    chain ${full} | ${full-left-out} | ${full-right-out}
+alias seq-full    chain ${full} | nudge -50% +0 | nudge +100% +0
+alias quad-leftout  sequence ${full} | nudge -75% +0
+alias quad-rightout sequence ${full} | nudge +75% +0
+alias quad-1 move screenOriginX+(screenSizeX/4)*0;screenOriginY screenSizeX/4;screenSizeY
+alias quad-2 move screenOriginX+(screenSizeX/4)*1;screenOriginY screenSizeX/4;screenSizeY
+alias quad-3 move screenOriginX+(screenSizeX/4)*2;screenOriginY screenSizeX/4;screenSizeY
+alias quad-4 move screenOriginX+(screenSizeX/4)*3;screenOriginY screenSizeX/4;screenSizeY
+alias seq-quad chain ${quad-1} | ${quad-2} | ${quad-3} | ${quad-4}
+# alias seq-small  chain move screenOriginX;screenOriginY | nudge -50% +0 | nudge +100% +0 | nudge -125% +0 | nudge +150% +0
+# alias seq-small  sequence push top | push left | nudge +80% +0
+alias aux-small  sequence push top | push left | nudge +80% +0
+
+
+bind f:${hyper}  ${seq-full}
+bind q:${hyper}  ${seq-full}
+bind f:${hyper};shift  ${seq-more}
+bind ;:${hyper}  ${aux-small}
+bind q:${hyper}  nudge -100 +100
+bind m:${hyper};shift  ${lefthalf}
+bind w:${hyper};shift  ${righthalf}
+
+# bind b:${hyper} ${quad-leftout}
+# bind v:${hyper} ${quad-rightout}
+bind b:${hyper}  ${quad-1}
+bind m:${hyper}  ${quad-2}
+bind w:${hyper}  ${quad-3}
+bind v:${hyper}  ${quad-4}
+bind z:${hyper}  ${seq-quad}
+
+# Focus Bindings
+bind t:${hyper}  focus behind
+bind h:${hyper}  focus behind
+bind c:${hyper}  focus right
+bind g:${hyper}  focus left
+
+# Focus apps
+bind u:${hyper}  focus "ターミナル"
+bind e:${hyper}  focus "Emacs"
+bind .:${hyper}  focus "Google Chrome"
+bind p:${hyper}  focus "Firefox"
+bind a:${hyper}  focus "Slack"
+
+# bind u:${hyper} ${showNormalHint}
+bind -:${hyper} ${showNormalHint}
+
+# # Push Bindings
+#bind c:alt       push right bar-resize:screenSizeX/3
+#bind c:alt       nudge +50% +0
+# bind m:alt       push up    bar-resize:screenSizeY/2
+# bind w:alt       push down  bar-resize:screenSizeY/2
+
+# # Nudge Bindings
+# bind v:shift;alt nudge +10% +0
+# bind b:shift;alt nudge -10% +0
+# bind m:shift;alt nudge +0   -10%
+# bind w:shift;alt nudge +0   +10%
+
+
+# Resize Bindings
+bind r:${hyper}           resize +10% +0
+bind l:${hyper}           resize -10% +0
+bind up:${hyper}          resize +0   -10%
+bind down:${hyper}        resize +0   +10%
+bind r:${hyper};shift     resize -10% +0 bottom-right
+bind l:${hyper};shift     resize +10% +0 bottom-right
+bind up:${hyper};shift    resize +0   +10% bottom-right
+bind down:${hyper};shift  resize +0   -10% bottom-right
+
+# # Push Bindings
+# bind v:alt       push right bar-resize:screenSizeX/3
+# bind b:alt       push left  bar-resize:screenSizeX/3
+# bind m:alt       push up    bar-resize:screenSizeY/2
+# bind w:alt       push down  bar-resize:screenSizeY/2
+
+# # Nudge Bindings
+# bind v:shift;alt nudge +10% +0
+# bind b:shift;alt nudge -10% +0
+# bind m:shift;alt nudge +0   -10%
+# bind w:shift;alt nudge +0   +10%

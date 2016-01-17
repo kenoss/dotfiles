@@ -98,3 +98,12 @@ alias xdvi=' xdvi -expert'
 # bugs here
 alias akill="ps -x | canything | awk '{print \$1}' | xargs kill -9"
 alias mkill="xprop | grep _NET_WM_PID | cut -d = -f 2 | xargs kill -9"
+
+
+#
+###
+### misc
+###
+
+export KEU_CHROME_EXECUTABLE='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+alias peco-git-merge-commit-url-open="peco-git-merge-commit-url | xargs $KEU_CHROME_EXECUTABLE"

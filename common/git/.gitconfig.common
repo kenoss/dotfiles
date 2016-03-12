@@ -12,6 +12,7 @@
         b = branch
         br = branch
         cho = checkout
+        mff = merge --ff
         mt = mergetool
         chp = cherry-pick -n
         d = diff
@@ -31,6 +32,7 @@
         stt = status -uno
         delete-merged-branches = "!f() { git branch --merged ${1:-HEAD} | grep -v \\* | xargs -I % git branch -D % ; }; f"
         brom = !git fetch origin master && git checkout -t origin/master -b
+        su = submodule update
 [push]
         default = current
 [branch]

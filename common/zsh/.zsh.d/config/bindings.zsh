@@ -1,6 +1,9 @@
 # -*- mode: shell-script -*-
 
 
+# Disable exit with C-d
+setopt IGNORE_EOF
+
 # Emacs like key bindings
 bindkey -e
 

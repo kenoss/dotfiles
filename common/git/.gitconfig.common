@@ -19,7 +19,7 @@
         d = diff
         dt = difftool -y
         # Word-wise diff, rather than line-wise.
-        difff = diff --word-diff
+        diffw = diff --word-diff
         # Pretty graph.
         gr  = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %C(reset)%cd %C(blue)%cn %C(red)%d %C(reset)%s' -20
         grl = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %C(reset)%cd %C(blue)%cn %C(red)%d %C(reset)%s'

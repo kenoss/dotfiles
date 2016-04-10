@@ -17,22 +17,19 @@
         mt = mergetool
         chp = cherry-pick -n
         d = diff
-        dns = diff --name-status
         dt = difftool -y
         # Word-wise diff, rather than line-wise.
         difff = diff --word-diff
         # Pretty graph.
-        gr    = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %C(reset)%cd %C(blue)%cn %C(red)%d %C(reset)%s' -20
-        grl   = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %C(reset)%cd %C(blue)%cn %C(red)%d %C(reset)%s'
-        gra   = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %C(reset)%cd %C(blue)%cn %C(red)%d %C(reset)%s' --all
-        gr-test = log --graph --date-order -C -M --pretty=format:\"<%h> %ad [%an] %Cgreen%d%Creset %s\" --all --date=short
+        gr  = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %C(reset)%cd %C(blue)%cn %C(red)%d %C(reset)%s' -20
+        grl = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %C(reset)%cd %C(blue)%cn %C(red)%d %C(reset)%s'
+        gra = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %C(reset)%cd %C(blue)%cn %C(red)%d %C(reset)%s' --all
         # Inverse of `~`.
         first-child = "!f() { git log  --reverse --ancestry-path --pretty=%H $1..${2:-HEAD} | head -1; }; f"
         cho-fc = "!git checkout $(git first-child HEAD master)"
         # Do not show untracked files.  Show not staged and staged.
         stt = status -uno
         delete-merged-branches = "!f() { git branch --merged ${1:-HEAD} | grep -v \\* | xargs -I % git branch -D % ; }; f"
-        brom = !git fetch origin master && git checkout -t origin/master -b
         su = submodule update
 [push]
         default = current

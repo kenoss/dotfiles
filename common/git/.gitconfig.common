@@ -5,32 +5,33 @@
 [color]
         ui = auto
 [alias]
-        s = status --branch --short
+        s  = status --branch --short
         st = status --branch --short
-        l = log --date=short --decorate=short --pretty=format:'%C(yellow)%h %C(reset)%cd %C(blue)%cn %C(red)%d %C(reset)%s'
-        com = commit
+        # Do not show untracked files.  Show not staged and staged.
+        stt = status -uno
+        su = submodule update
         b = branch
         br = branch
+        com = commit
         cho = checkout
+        chp = cherry-pick -n
         mff = merge --ff
         mffo = "!f() { local branch=origin/$(git rev-parse --abbrev-ref HEAD); if git branch -a | grep \"$branch\"; then git merge --ff \"$branch\"; else echo \"Branch not found: $branch\"; exit 1; fi }; f"
         mt = mergetool
-        chp = cherry-pick -n
-        d = diff
-        dt = difftool -y
-        # Word-wise diff, rather than line-wise.
+        d  = diff
+        ds = diff --stat
+        dw = diff --word-diff
+        diffs = diff --stat
         diffw = diff --word-diff
-        # Pretty graph.
+        dt = difftool -y
+        l   = log --date=short --decorate=short --pretty=format:'%C(yellow)%h %C(reset)%cd %C(blue)%cn %C(red)%d %C(reset)%s'
         gr  = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %C(reset)%cd %C(blue)%cn %C(red)%d %C(reset)%s' -20
         grl = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %C(reset)%cd %C(blue)%cn %C(red)%d %C(reset)%s'
         gra = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %C(reset)%cd %C(blue)%cn %C(red)%d %C(reset)%s' --all
         # Inverse of `~`.
-        first-child = "!f() { git log  --reverse --ancestry-path --pretty=%H $1..${2:-HEAD} | head -1; }; f"
+        first-child = "!f() { git log --reverse --ancestry-path --pretty=%H $1..${2:-HEAD} | head -1; }; f"
         cho-fc = "!git checkout $(git first-child HEAD master)"
-        # Do not show untracked files.  Show not staged and staged.
-        stt = status -uno
         delete-merged-branches = "!f() { git branch --merged ${1:-HEAD} | grep -v \\* | xargs -I % git branch -D % ; }; f"
-        su = submodule update
 [push]
         default = current
 [branch]

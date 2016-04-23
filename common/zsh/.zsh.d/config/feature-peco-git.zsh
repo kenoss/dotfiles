@@ -1,12 +1,18 @@
 # -*- mode: shell-script -*-
 
 ###
-### peco git
+### Auxiliary
 ###
 
 function git-repository-url {
     git remote -v | grep origin | grep fetch | gsed -r -e 's|^origin\t+(ssh://)?git@(.*).git .*$|\2|' | (read host; echo https://$host)
 }
+
+
+
+###
+### peco git
+###
 
 function peco-git-merge-commit-url {
     local prid=$(git log --all --grep 'Merge pull request' --date=short --decorate=short \

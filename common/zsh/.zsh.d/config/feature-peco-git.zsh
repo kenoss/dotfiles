@@ -8,11 +8,30 @@ function git-repository-url {
     git remote -v | grep origin | grep fetch | gsed -r -e 's|^origin\t+(ssh://)?git@(.*).git .*$|\2|' | (read host; echo https://$host)
 }
 
+function peco-git-select-branch-internal () {
+    local command
+    if [ -n "$1" ]; then
+        command="$1"
+    else
+        command='git branch -a'
+    fi
+    local selected_branch_name=$(eval $command | peco | awk '{ gsub(/remotes\//, "", $NF); print $NF }')
+    echo "$selected_branch_name"
+}
+
 
 
 ###
 ### peco git
 ###
+
+function peco-git-insert-branch-to-buffer () {
+    local selected_branch_name=$(peco-git-select-branch-internal)
+    if [ -n "$selected_branch_name" ]; then
+        LBUFFER="${LBUFFER% } ${selected_branch_name}"
+    fi
+}
+zle -N peco-git-insert-branch-to-buffer
 
 function peco-git-merge-commit-url {
     local prid=$(git log --all --grep 'Merge pull request' --date=short --decorate=short \

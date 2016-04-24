@@ -4,7 +4,7 @@
 ### Auxiliary
 ###
 
-function git-repository-url {
+function git-repository-url () {
     git remote -v | grep origin | grep fetch | gsed -r -e 's|^origin\t+(ssh://)?git@(.*).git .*$|\2|' | (read host; echo https://$host)
 }
 
@@ -42,7 +42,7 @@ function peco-git-compare-branch-url () {
     echo "$url/compare/$selected_start_branch_name...$selected_end_branch_name"
 }
 
-function peco-git-merge-commit-url {
+function peco-git-merge-commit-url () {
     local prid=$(git log --all --grep 'Merge pull request' --date=short --decorate=short \
                      --pretty=format:'%C(yellow)%h %C(reset)%cd %C(blue)%cn %C(red)%d %C(reset)%s' |
                         peco |

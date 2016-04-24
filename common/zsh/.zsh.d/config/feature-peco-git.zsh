@@ -33,6 +33,15 @@ function peco-git-insert-branch-to-buffer () {
 }
 zle -N peco-git-insert-branch-to-buffer
 
+function peco-git-compare-branch-url () {
+    local selected_start_branch_name=$(peco-git-select-branch-internal)
+    if [ -z "$selected_start_branch_name" ]; then return; fi
+    local selected_end_branch_name=$(peco-git-select-branch-internal)
+    if [ -z "$selected_end_branch_name" ]; then return; fi
+    local url=$(git-repository-url)
+    echo "$url/compare/$selected_start_branch_name...$selected_end_branch_name"
+}
+
 function peco-git-merge-commit-url {
     local prid=$(git log --all --grep 'Merge pull request' --date=short --decorate=short \
                      --pretty=format:'%C(yellow)%h %C(reset)%cd %C(blue)%cn %C(red)%d %C(reset)%s' |

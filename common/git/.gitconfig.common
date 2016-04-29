@@ -16,7 +16,7 @@
         cho = checkout
         chp = cherry-pick -n
         mff = merge --ff
-        mffo = "!f() { local branch=origin/$(git rev-parse --abbrev-ref HEAD); if git branch -a | grep \"$branch\"; then git merge --ff \"$branch\"; else echo \"Branch not found: $branch\"; exit 1; fi }; f"
+        mffo = "!f() { local branch=origin/$(git rev-parse --abbrev-ref HEAD); if git branch -a | grep \"$branch\" > /dev/null; then git merge --ff \"$branch\"; else echo \"Branch not found: $branch\"; exit 1; fi }; f"
         mt = mergetool
         d  = diff
         ds = diff --stat

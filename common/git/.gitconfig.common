@@ -3,7 +3,10 @@
 [core]
         excludesfile = ~/.gitignore_global
 [color]
-        ui = auto
+	ui = auto
+[pager]
+        # Pseudo `less -SF`.
+        gr = cut -c 1-$(($(tput cols) + 21)) && echo
 [alias]
         s  = status --branch --short
         st = status --branch --short

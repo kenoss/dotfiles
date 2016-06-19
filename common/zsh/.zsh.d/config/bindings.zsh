@@ -14,8 +14,6 @@ zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
-bindkey '^R' history-incremental-pattern-search-backward
-bindkey '^S' history-incremental-pattern-search-forward
 
 
 # Kill and yank
@@ -42,4 +40,8 @@ bindkey '^u^l' peco-tmux-select-window
 
 
 # peco ghq
-bindkey '^u^o' peco-ghq
+bindkey '^u^h' peco-ghq
+
+
+# peco history
+bindkey '^R' peco-history-select

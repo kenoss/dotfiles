@@ -29,3 +29,25 @@ function peco-ghq () {
 }
 
 zle -N peco-ghq
+
+
+#
+###
+### peco history
+###
+
+function peco-history-select () {
+    local tac
+    if which tac > /dev/null; then
+        tac=tac
+    else
+        tac='tail -r'
+    fi
+    local cmd=$(fc -l 1 | eval $tac | peco --query "$BUFFER" | gsed -r -e 's/^ *[0-9]+\*?  //')
+    if [ -n "$cmd" ]; then
+        BUFFER="$cmd"
+        CURSOR=$#BUFFER
+    fi
+}
+
+zle -N peco-history-select

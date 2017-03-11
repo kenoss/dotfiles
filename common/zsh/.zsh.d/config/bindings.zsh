@@ -29,10 +29,8 @@ bindkey "^e" expand-abbrev
 
 # peco git
 load-zsh-config config/feature-peco-git.zsh
-bindkey "^u^a" peco-select-gitadd
 bindkey '^u^b' peco-git-insert-branch-to-buffer
-bindkey '^u^n' peco-git-new-branch-with-base
-bindkey '^u^u' peco-git-select-branch
+bindkey '^u^m' peco-git-insert-modified-files-to-buffer
 
 
 # peco tmux

@@ -50,3 +50,11 @@ function peco-git-merge-commit-url () {
     local url=$(git-repository-url)
     echo "$url/pull/$prid"
 }
+
+function peco-git-insert-modified-files-to-buffer () {
+    local selected_files=$(git status --short | peco --prompt "[git status --short]" | awk '{print $2}' | tr '\n' ' ' | gsed -re 's/ $//')
+    echo $selected_files
+    LBUFFER="${LBUFFER% } $selected_files"
+    zle redisplay
+}
+zle -N peco-git-insert-modified-files-to-buffer

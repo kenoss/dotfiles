@@ -25,9 +25,9 @@
         mt = mergetool
         d  = diff
         ds = diff --stat
-        dw = diff --word-diff
+        dw = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
         diffs = diff --stat
-        diffw = diff --word-diff
+        diffw = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
         dt = difftool -y
         l   = log --date=short --decorate=short --pretty=format:'%C(yellow)%h %C(reset)%cd %C(blue)%cn %C(red)%d %C(reset)%s'
         gr  = log --graph --date=short --decorate=short --pretty=format:'%C(yellow)%h %C(reset)%cd %C(blue)%cn %C(red)%d %C(reset)%s' -20

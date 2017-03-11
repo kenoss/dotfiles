@@ -89,6 +89,8 @@ alias gmplayer=' gmplayer'
 
 alias xdvi=' xdvi -expert'
 
+alias tg=' tig grep'
+
 
 #
 ###

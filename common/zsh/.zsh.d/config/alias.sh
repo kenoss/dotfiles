@@ -112,3 +112,6 @@ alias peco-git-merge-commit-url-open="peco-git-merge-commit-url | xargs $KEU_CHR
 
 
 alias js-beautify-replace='js-beautify -rn'
+
+export DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer
+alias symbolicatecrash='/Applications/Xcode.app/Contents/SharedFrameworks/DTDeviceKitBase.framework/Versions/A/Resources/symbolicatecrash'

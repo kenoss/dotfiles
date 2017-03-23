@@ -1,2 +1,4 @@
-/common/git/.gitconfig.company
-/common/zsh/.zsh.d/config/company.sh
+common/git/.gitconfig.company
+common/zsh/.zsh.d/.zcompdump
+common/zsh/.zsh.d/.zsh_history
+common/zsh/.zsh.d/config/company.sh

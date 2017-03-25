@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <root>
+
   <devicevendordef>
     <vendorname>PFU</vendorname>
     <vendorid>0x04fe</vendorid>
@@ -25,173 +26,365 @@
     <productid>0x0264</productid>
   </deviceproductdef>
 
+  <appdef>
+    <appname>ADOBEREADER</appname>
+    <equal>com.adobe.Reader</equal>
+  </appdef>
+
   <item>
-    <name>Exchange Backquote(`) and Backslash(\)</name>
-    <identifier>private.remap.exchange_backquote_backslash</identifier>
-    <autogen> __KeyToKey__ KeyCode::JIS_UNDERSCORE, KeyCode::BACKSLASH </autogen>
-    <autogen> __KeyToKey__ KeyCode::JIS_YEN,        KeyCode::BACKQUOTE </autogen>
+    <name>Fundamental keys and modifiers</name>
+    <item>
+      <name>Exchange Backquote(`) and Backslash(\)</name>
+      <identifier>private.remap.exchange_backquote_backslash</identifier>
+    </item>
+    <item>
+      <name>Modifiers for all</name>
+      <identifier>private.remap.modifiers_common</identifier>
+      <appendix><![CDATA[ Backslash (left of Enter) => Escape, ]]></appendix>
+      <appendix><![CDATA[ Escape                    => Backquote, ]]></appendix>
+      <appendix><![CDATA[ Tab                       => Option_R (alt), ]]></appendix>
+      <appendix><![CDATA[ Shift_R                   => Tab, ]]></appendix>
+    </item>
+    <item>
+      <name>Modifiers on Apple's keyboard</name>
+      <identifier>private.remap.modifiers_on_apple</identifier>
+      <device_only>DeviceVendor::APPLE_COMPUTER,DeviceProduct::APPLE_INTERNAL_KEYBOARD_TRACKPAD_0x0264</device_only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::JIS_UNDERSCORE,
+        KeyCode::BACKSLASH
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::JIS_YEN,
+        KeyCode::BACKQUOTE
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::BACKSLASH,
+        KeyCode::ESCAPE
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::ESCAPE,
+        KeyCode::BACKQUOTE
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::TAB,
+        KeyCode::OPTION_R
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::SHIFT_R,
+        KeyCode::TAB
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::F19,
+        KeyCode::OPTION_L, ModifierFlag::COMMAND_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::OPTION_L,
+        KeyCode::OPTION_L, ModifierFlag::COMMAND_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::COMMAND_R,
+        KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::FN,
+        KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L
+      </autogen>
+    </item>
+    <item>
+      <name>Modifiers on HHK (following the above setting)</name>
+      <identifier>private.remap.modifiers_on_hhk</identifier>
+      <device_only>DeviceVendor::PFU, DeviceProduct::HHKProJP</device_only>
+      <appendix><![CDATA[ Alt_R     => C-right ]]></appendix>
+      <appendix><![CDATA[ Option_L <=> Command_L ]]></appendix>
+      <autogen>
+        __KeyToKey__
+        KeyCode::JIS_UNDERSCORE,
+        KeyCode::BACKSLASH
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::JIS_YEN,
+        KeyCode::BACKQUOTE
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::BACKSLASH,
+        KeyCode::ESCAPE
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::ESCAPE,
+        KeyCode::BACKQUOTE
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::TAB,
+        KeyCode::OPTION_R
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::SHIFT_R,
+        KeyCode::TAB
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::OPTION_R,
+        KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::BACKQUOTE,
+        KeyCode::OPTION_L, ModifierFlag::COMMAND_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::OPTION_L,
+        KeyCode::COMMAND_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::COMMAND_L,
+        KeyCode::OPTION_L
+      </autogen>
+    </item>
+    <item>
+      <name>Modifiers on Realforce (following the above setting)</name>
+      <identifier>private.remap.modifiers_on_realforce</identifier>
+      <device_only>DeviceVendor::Topre_Corporation, DeviceProduct::Realforce_108UDK</device_only>
+      <appendix><![CDATA[ Capslock (Control_R) =>  Control_L ]]></appendix>
+      <appendix><![CDATA[ Control_L            =>  Super ]]></appendix>
+      <appendix><![CDATA[ Windows              =>  Super ]]></appendix>
+      <appendix><![CDATA[ Command_R            =>  C-left ]]></appendix>
+      <appendix><![CDATA[ Option_R             =>  C-right ]]></appendix>
+      <autogen>
+        __KeyToKey__
+        KeyCode::JIS_UNDERSCORE,
+        KeyCode::BACKSLASH
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::JIS_YEN,
+        KeyCode::BACKQUOTE
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::BACKSLASH,
+        KeyCode::ESCAPE
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::ESCAPE,
+        KeyCode::BACKQUOTE
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::TAB,
+        KeyCode::OPTION_R
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::SHIFT_R,
+        KeyCode::TAB
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::CONTROL_L,
+        KeyCode::OPTION_L, ModifierFlag::COMMAND_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::COMMAND_L,
+        KeyCode::OPTION_L, ModifierFlag::COMMAND_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::CONTROL_R,
+        KeyCode::CONTROL_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::COMMAND_R,
+        KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::OPTION_R,
+        KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L
+      </autogen>
+    </item>
+    <item>
+      <name>Smart Eisuu and Kana</name>
+      <identifier>private.remap.smart_eisuu_kana</identifier>
+      <device_only>DeviceVendor::APPLE_COMPUTER,DeviceProduct::APPLE_INTERNAL_KEYBOARD_TRACKPAD_0x0264</device_only>
+      <appendix><![CDATA[ JIS_EISUU => Muhenkan ]]></appendix>
+      <appendix><![CDATA[ JIS_KANA  => Henkan (Control_R; hyper) ]]></appendix>
+      <appendix><![CDATA[ Muhenkan + Space => JIS_EISUU ]]></appendix>
+      <appendix><![CDATA[ Muhenkan + Henkan => JIS_KANA ]]></appendix>
+      <appendix><![CDATA[ See also below SandS ]]></appendix>
+      <autogen>
+        __KeyToKey__
+        KeyCode::JIS_EISUU,
+        KeyCode::COMMAND_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::SPACE, ModifierFlag::COMMAND_L,
+        KeyCode::JIS_EISUU
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::JIS_KANA, ModifierFlag::COMMAND_L,
+        KeyCode::JIS_KANA
+      </autogen>
+    </item>
+    <item>
+      <name>Smart Eisuu and Kana on HHKB</name>
+      <identifier>private.remap.smart_eisuu_kana.hhkb</identifier>
+      <device_only>DeviceVendor::PFU, DeviceProduct::HHKProJP</device_only>
+      <appendix><![CDATA[ JIS_EISUU => Muhenkan ]]></appendix>
+      <appendix><![CDATA[ JIS_KANA  => Henkan (Control_R; hyper) ]]></appendix>
+      <appendix><![CDATA[ Muhenkan + Space => JIS_EISUU ]]></appendix>
+      <appendix><![CDATA[ Muhenkan + Henkan => JIS_KANA ]]></appendix>
+      <appendix><![CDATA[ See also below SandS ]]></appendix>
+      <autogen>
+        __KeyToKey__
+        KeyCode::JIS_EISUU,
+        KeyCode::COMMAND_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::SPACE, ModifierFlag::COMMAND_L,
+        KeyCode::JIS_EISUU
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::JIS_KANA, ModifierFlag::COMMAND_L,
+        KeyCode::JIS_KANA
+      </autogen>
+    </item>
+    <item>
+      <name>SandS v2 on the right hand's sum position</name>
+      <identifier>remap.sands2kana</identifier>
+      <device_only>DeviceVendor::APPLE_COMPUTER,DeviceProduct::APPLE_INTERNAL_KEYBOARD_TRACKPAD_0x0264</device_only>
+      <appendix><![CDATA[ * Change the Kana key (below "M") to the left shift key. ]]></appendix>
+      <appendix><![CDATA[ * Send a Yen key event when the Kana key is pressed alone. ]]></appendix>
+      <appendix><![CDATA[  ]]></appendix>
+      <appendix><![CDATA[ * Send a Yen key event when the space key is released before another key is released. ]]></appendix>
+      <appendix><![CDATA[ For example: ]]></appendix>
+      <appendix><![CDATA[   Kana down -> Kana up -> T down -> T up => Yen,T ]]></appendix>
+      <appendix><![CDATA[   Kana down -> T down -> T up => Shift+T ]]></appendix>
+      <appendix><![CDATA[   Kana down -> T down -> Kana up => Yen,T ]]></appendix>
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::JIS_KANA,
+        KeyCode::SHIFT_L, ModifierFlag::SANDS2,
+        KeyCode::BACKSLASH
+      </autogen>
+    </item>
+    <item>
+      <name>SandS v2 on the right hand's sum position on HHKB</name>
+      <identifier>remap.sands2kana.hhkb</identifier>
+      <device_only>DeviceVendor::PFU, DeviceProduct::HHKProJP</device_only>
+      <appendix><![CDATA[ * Change the Kana key (below "M") to the left shift key. ]]></appendix>
+      <appendix><![CDATA[ * Send a Yen key event when the Kana key is pressed alone. ]]></appendix>
+      <appendix><![CDATA[  ]]></appendix>
+      <appendix><![CDATA[ * Send a Yen key event when the space key is released before another key is released. ]]></appendix>
+      <appendix><![CDATA[ For example: ]]></appendix>
+      <appendix><![CDATA[   Kana down -> Kana up -> T down -> T up => Yen,T ]]></appendix>
+      <appendix><![CDATA[   Kana down -> T down -> T up => Shift+T ]]></appendix>
+      <appendix><![CDATA[   Kana down -> T down -> Kana up => Yen,T ]]></appendix>
+      <autogen>
+        __KeyOverlaidModifier__
+        KeyCode::JIS_KANA,
+        KeyCode::SHIFT_L, ModifierFlag::SANDS2,
+        KeyCode::BACKSLASH
+      </autogen>
+    </item>
   </item>
 
   <item>
-    <name>Modifiers for all</name>
-    <identifier>private.remap.modifiers_common</identifier>
-    <appendix><![CDATA[ Backslash (left of Enter) => Escape, ]]></appendix>
-    <appendix><![CDATA[ Escape                    => Backquote, ]]></appendix>
-    <appendix><![CDATA[ Tab                       => Option_R (alt), ]]></appendix>
-    <appendix><![CDATA[ Shift_R                   => Tab, ]]></appendix>
-    <autogen> __KeyToKey__ KeyCode::BACKSLASH, KeyCode::ESCAPE </autogen>
-    <autogen> __KeyToKey__ KeyCode::ESCAPE,    KeyCode::BACKQUOTE </autogen>
-    <autogen> __KeyToKey__ KeyCode::TAB,       KeyCode::OPTION_R </autogen>
-    <autogen> __KeyToKey__ KeyCode::SHIFT_R,   KeyCode::TAB </autogen>
-  </item>
-
-  <item>
-    <name>Modifiers on Apple's keyboard</name>
-    <identifier>private.remap.modifiers_on_apple</identifier>
-    <device_only>DeviceVendor::APPLE_COMPUTER,DeviceProduct::APPLE_INTERNAL_KEYBOARD_TRACKPAD_0x0264</device_only>
-    <!-- <autogen> __KeyToKey__ KeyCode::BACKQUOTE, KeyCode::OPTION_L </autogen> -->
-    <!-- By Seil(PCKeyboardHack), Capslock has been over written with F19(80). -->
-    <!-- <autogen> __KeyToKey__ KeyCode::F19,       KeyCode::OPTION_L, ModifierFlag::CONTROL_L, ModifierFlag::COMMAND_L </autogen> -->
-    <autogen> __KeyToKey__ KeyCode::F19,       KeyCode::OPTION_L, ModifierFlag::COMMAND_L </autogen>
-    <autogen> __KeyToKey__ KeyCode::OPTION_L,  KeyCode::OPTION_L, ModifierFlag::COMMAND_L </autogen>
-    <autogen> __KeyToKey__ KeyCode::COMMAND_R, KeyCode::CURSOR_LEFT,  ModifierFlag::CONTROL_L </autogen>
-    <autogen> __KeyToKey__ KeyCode::FN,        KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L </autogen>
-  </item>
-
-  <item>
-    <name>Modifiers on HHK (following the above setting)</name>
-    <appendix><![CDATA[ Alt_R     => C-right ]]></appendix>
-    <appendix><![CDATA[ Option_L <=> Command_L ]]></appendix>
-    <identifier>private.remap.modifiers_on_hhk</identifier>
-    <device_only>DeviceVendor::PFU, DeviceProduct::HHKProJP</device_only> <!-- HHKB Professional JP (PFU Limited ) -->
-    <autogen> __KeyToKey__ KeyCode::OPTION_R,  KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L </autogen>
-    <autogen> __KeyToKey__ KeyCode::BACKQUOTE, KeyCode::OPTION_L, ModifierFlag::COMMAND_L </autogen>
-    <autogen> __KeyToKey__ KeyCode::OPTION_L,  KeyCode::COMMAND_L </autogen>
-    <autogen> __KeyToKey__ KeyCode::COMMAND_L, KeyCode::OPTION_L </autogen>
-  </item>
-
-  <item>
-    <name>Modifiers on Realforce (following the above setting)</name>
-    <appendix><![CDATA[ Capslock (Control_R) =>  Control_L ]]></appendix>
-    <appendix><![CDATA[ Control_L            =>  Super ]]></appendix>
-    <appendix><![CDATA[ Windows              =>  Super ]]></appendix>
-    <appendix><![CDATA[ Command_R            =>  C-left ]]></appendix>
-    <appendix><![CDATA[ Option_R             =>  C-right ]]></appendix>
-    <identifier>private.remap.modifiers_on_realforce</identifier>
-    <device_only>DeviceVendor::Topre_Corporation, DeviceProduct::Realforce_108UDK</device_only>
-
-    <autogen> __KeyToKey__ KeyCode::CONTROL_L, KeyCode::OPTION_L, ModifierFlag::COMMAND_L </autogen>
-    <autogen> __KeyToKey__ KeyCode::COMMAND_L, KeyCode::OPTION_L, ModifierFlag::COMMAND_L </autogen>
-    <autogen> __KeyToKey__ KeyCode::CONTROL_R, KeyCode::CONTROL_L </autogen>
-    <autogen> __KeyToKey__ KeyCode::COMMAND_R, KeyCode::CURSOR_LEFT,  ModifierFlag::CONTROL_L </autogen>
-    <autogen> __KeyToKey__ KeyCode::OPTION_R,  KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L </autogen>
-  </item>
-
-  <item>
-    <name>Smart Eisuu and Kana</name>
-    <appendix><![CDATA[ JIS_EISUU => Muhenkan ]]></appendix>
-    <appendix><![CDATA[ JIS_KANA  => Henkan (Control_R; hyper) ]]></appendix>
-    <appendix><![CDATA[ Muhenkan + Space => JIS_EISUU ]]></appendix>
-    <appendix><![CDATA[ Muhenkan + Henkan => JIS_KANA ]]></appendix>
-    <appendix><![CDATA[ See also below SandS ]]></appendix>
-    <identifier>private.remap.smart_eisuu_kana</identifier>
-    <!-- escape Eisuu and Kana -->
-    <autogen>
-      __KeyToKey__ KeyCode::JIS_EISUU, ModifierFlag::COMMAND_L,
-      KeyCode::JIS_EISUU
-    </autogen>
-    <autogen>
-      __KeyToKey__ KeyCode::JIS_KANA,  ModifierFlag::COMMAND_L,
-      KeyCode::JIS_KANA
-    </autogen>
-    <!-- Eisuu+Space -> Eisuu, Eisuu+Kana -> Kana -->
-    <autogen>
-      __KeyToKey__ KeyCode::JIS_KANA,  ModifierFlag::COMMAND_L,
-      KeyCode::JIS_KANA
-    </autogen>
-    <autogen>
-      __KeyToKey__ KeyCode::SPACE,     ModifierFlag::COMMAND_L,
-      KeyCode::JIS_EISUU
-    </autogen>
-    <!-- Eisuu -> Command_L (hyper) -->
-    <autogen>
-      __KeyToKey__ KeyCode::JIS_EISUU,
-      KeyCode::COMMAND_L
-    </autogen>
-  </item>
-
-  <item>
-    <name>SandS v2 on the right hand's sum position</name>
-    <appendix>* Change the Kana key (below "M") to the left shift key.</appendix>
-    <appendix>* Send a Yen key event when the Kana key is pressed alone.</appendix>
-    <appendix></appendix>
-    <appendix>* Send a Yen key event when the space key is released before another key is released.</appendix>
-    <appendix>For example:</appendix>
-    <appendix><![CDATA[  Kana down -> Kana up -> T down -> T up => Yen,T  ]]></appendix>
-    <appendix><![CDATA[  Kana down -> T down -> T up => Shift+T  ]]></appendix>
-    <appendix><![CDATA[  Kana down -> T down -> Kana up => Yen,T  ]]></appendix>
-    <identifier>remap.sands2kana</identifier>
-    <autogen>
-      __KeyOverlaidModifier__
-      KeyCode::JIS_KANA,
-
-      KeyCode::SHIFT_L, ModifierFlag::SANDS2,
-
-      <!-- KeyCode::JIS_YEN, -->
-      KeyCode::BACKSLASH,
-    </autogen>
-  </item>
-
-  <item>
-    <name>XMonad like keybindings</name>
-    <appendix><![CDATA[ Super+d => C-left ]]></appendix>
-    <appendix><![CDATA[ Super+n => C-right ]]></appendix>
-    <appendix><![CDATA[ Super+o => C-left ]]></appendix>
-    <appendix><![CDATA[ Super+i => C-right ]]></appendix>
-    <appendix><![CDATA[ Super+Space => C-up ]]></appendix>
-    <appendix><![CDATA[ Super+/ => C-tab ]]></appendix>
-    <identifier>private.remap.xmonad_like_keybindings</identifier>
-    <autogen> <!-- Super + d -->
-      __KeyToKey__ KeyCode::H, ModifierFlag::OPTION_L, ModifierFlag::COMMAND_L,
-      KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L
-    </autogen>
-    <autogen> <!-- Super + n -->
-      __KeyToKey__ KeyCode::L, ModifierFlag::OPTION_L, ModifierFlag::COMMAND_L,
-      KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L
-    </autogen>
-
-    <autogen> <!-- Super + o -->
-      __KeyToKey__ KeyCode::S, ModifierFlag::OPTION_L, ModifierFlag::COMMAND_L,
-      KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L
-    </autogen>
-    <autogen> <!-- Super + i -->
-      __KeyToKey__ KeyCode::G, ModifierFlag::OPTION_L, ModifierFlag::COMMAND_L,
-      KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L
-    </autogen>
-
-    <autogen> <!-- Super + space -->
-      __KeyToKey__ KeyCode::SPACE, ModifierFlag::OPTION_L, ModifierFlag::COMMAND_L,
-      KeyCode::CURSOR_UP, ModifierFlag::CONTROL_L
-    </autogen>
-    <autogen> <!-- Super + / -->
-      __KeyToKey__ KeyCode::BRACKET_LEFT, ModifierFlag::OPTION_L, ModifierFlag::COMMAND_L,
-      KeyCode::TAB, ModifierFlag::COMMAND_L
-    </autogen>
-  </item>
-
-  <item>
-    <name>Kill app</name>
-    <identifier>private.remap.kill_app</identifier>
-    <appendix><![CDATA[ Super-q => Command-q (kill app) ]]></appendix>
-    <not>FINDER</not>
-    <autogen> <!-- Super + q  ::  kill app (Command + q) -->
-      __KeyToKey__ KeyCode::X, ModifierFlag::OPTION_L, ModifierFlag::COMMAND_L,
-      KeyCode::X, ModifierFlag::COMMAND_L
-    </autogen>
-    <autogen> <!-- Super + k  ::  kill window (Command + w) -->
-      __KeyToKey__ KeyCode::V, ModifierFlag::OPTION_L, ModifierFlag::COMMAND_L,
-      KeyCode::COMMA, ModifierFlag::COMMAND_L
-    </autogen>
+    <name>Fundamental key combinations</name>
+    <item>
+      <name>XMonad like keybindings</name>
+      <identifier>private.remap.xmonad_like_keybindings</identifier>
+      <appendix><![CDATA[ Super+d => C-left ]]></appendix>
+      <appendix><![CDATA[ Super+n => C-right ]]></appendix>
+      <appendix><![CDATA[ Super+o => C-left ]]></appendix>
+      <appendix><![CDATA[ Super+i => C-right ]]></appendix>
+      <appendix><![CDATA[ Super+Space => C-up ]]></appendix>
+      <appendix><![CDATA[ Super+/ => C-tab ]]></appendix>
+      <autogen>
+        __KeyToKey__
+        KeyCode::H, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L,
+        KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::L, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L,
+        KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::S, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L,
+        KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::G, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L,
+        KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::SPACE, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L,
+        KeyCode::CURSOR_UP, ModifierFlag::CONTROL_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::BRACKET_LEFT, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L,
+        KeyCode::TAB, ModifierFlag::COMMAND_L
+      </autogen>
+    </item>
+    <item>
+      <name>Kill app</name>
+      <identifier>private.remap.kill_app</identifier>
+      <appendix><![CDATA[ Super-q => Command-q (kill app) ]]></appendix>
+      <appendix><![CDATA[ Super-k => Command-w (kill window) ]]></appendix>
+      <autogen>
+        __KeyToKey__
+        KeyCode::X, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L,
+        KeyCode::X, ModifierFlag::COMMAND_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::C, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L,
+        KeyCode::I, ModifierFlag::COMMAND_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::V, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L,
+        KeyCode::DOT, ModifierFlag::COMMAND_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::Q, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L,
+        KeyCode::COMMA, ModifierFlag::COMMAND_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::Q, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L, ModifierFlag::SHIFT_L,
+        KeyCode::X, ModifierFlag::COMMAND_L
+      </autogen>
+    </item>
   </item>
 
   <item>
@@ -199,9 +392,9 @@
     <identifier>private.remap.kill_window_on_finder</identifier>
     <appendix><![CDATA[ Super-q -> Command-w (kill window) ]]></appendix>
     <only>FINDER</only>
-    <autogen> <!-- Super + q  ::  kill window (Command+w) -->
+    <autogen>
       __KeyToKey__
-      KeyCode::X,     ModifierFlag::OPTION_L, ModifierFlag::COMMAND_L,
+      KeyCode::X, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L,
       KeyCode::COMMA, ModifierFlag::COMMAND_L
     </autogen>
   </item>
@@ -209,9 +402,9 @@
   <item>
     <name>Cycle app in the current Space with super+t / super+h</name>
     <identifier>private.cycle_app_in_the_current_space</identifier>
-    <autogen> <!-- Super + t -->
+    <autogen>
       __KeyToKey__
-      KeyCode::K, ModifierFlag::OPTION_L, ModifierFlag::COMMAND_L,
+      KeyCode::K, ModifierFlag::COMMAND_L, ModifierFlag::OPTION_L,
       KeyCode::F4, ModifierFlag::CONTROL_L
     </autogen>
   </item>
@@ -222,9 +415,7 @@
     <autogen>
       __KeyToKey__
       PointingButton::LEFT,
-      PointingButton::LEFT,  KeyCode::I, ModifierFlag::COMMAND_L,
-
-      Option::NOREPEAT,
+      PointingButton::LEFT,  KeyCode::I, ModifierFlag::COMMAND_L, Option::NOREPEAT
     </autogen>
   </item>
 
@@ -233,8 +424,7 @@
     <identifier>private.remap.reverse_mouse_scrolling</identifier>
     <device_only>DeviceVendor::LOGITECH, DeviceProduct::LOGITECH_UNIFYING_0xc52b</device_only>
     <autogen>
-      __FlipScrollWheel__
-      Option::FLIPSCROLLWHEEL_VERTICAL,
+      __FlipScrollWheel__ Option::FLIPSCROLLWHEEL_VERTICAL
     </autogen>
   </item>
 
@@ -244,65 +434,70 @@
     <autogen>
       __KeyToKey__
       PointingButton::BUTTON4,
-      KeyCode::CURSOR_LEFT,  ModifierFlag::CONTROL_L
+      KeyCode::CURSOR_LEFT, ModifierFlag::CONTROL_L
     </autogen>
     <autogen>
       __KeyToKey__
-      PointingButton::BUTTON4,
+      PointingButton::BUTTON5,
       KeyCode::CURSOR_RIGHT, ModifierFlag::CONTROL_L
     </autogen>
   </item>
-
-  <appdef>
-    <appname>ADOBEREADER</appname>
-    <equal>com.adobe.Reader</equal>
-  </appdef>
 
   <item>
     <name>dhtn move for Cocoa</name>
     <identifier>private.remap.dhtn_move_for_cocoa</identifier>
     <only>PREVIEW</only>
-    <autogen> __KeyToKey__ KeyCode::J, KeyCode::CURSOR_UP, KeyCode::CURSOR_UP, KeyCode::CURSOR_UP </autogen>
-    <autogen> __KeyToKey__ KeyCode::K, KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN </autogen>
-    <autogen> __KeyToKey__ KeyCode::D, KeyCode::CURSOR_UP, KeyCode::CURSOR_UP, KeyCode::CURSOR_UP </autogen>
-    <autogen> __KeyToKey__ KeyCode::F, KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN </autogen>
-  </item>
-
-  <item>
-    <name>dhtn move for Adobe</name>
-    <identifier>private.remap.dhtn_move_for_adobe</identifier>
-    <only>ADOBEREADER</only>
-    <autogen> __KeyToKey__ KeyCode::J, KeyCode::CURSOR_UP, KeyCode::CURSOR_UP, KeyCode::CURSOR_UP, KeyCode::CURSOR_UP, KeyCode::CURSOR_UP </autogen>
-    <autogen> __KeyToKey__ KeyCode::K, KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN </autogen>
-    <autogen> __KeyToKey__ KeyCode::D, KeyCode::CURSOR_UP, KeyCode::CURSOR_UP, KeyCode::CURSOR_UP, KeyCode::CURSOR_UP, KeyCode::CURSOR_UP </autogen>
-    <autogen> __KeyToKey__ KeyCode::F, KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN </autogen>
-    <autogen> __KeyToKey__ KeyCode::Y, KeyCode::L, ModifierFlag::COMMAND_L </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::J,
+      KeyCode::CURSOR_UP, KeyCode::CURSOR_UP, KeyCode::CURSOR_UP
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::K,
+      KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::D,
+      KeyCode::CURSOR_UP, KeyCode::CURSOR_UP, KeyCode::CURSOR_UP
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::F,
+      KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN, KeyCode::CURSOR_DOWN
+    </autogen>
   </item>
 
   <item>
     <name>Excel</name>
-    <only>EXCEL</only>
     <item>
       <name>Change C-h to backspace</name>
       <identifier>private.remap.app_excel_c_h_to_delete</identifier>
+      <only>EXCEL</only>
       <autogen>
-        __KeyToKey__ KeyCode::J, ModifierFlag::CONTROL_L,
+        __KeyToKey__
+        KeyCode::J, ModifierFlag::CONTROL_L,
         KeyCode::DELETE
       </autogen>
     </item>
     <item>
       <name>Change C-f to forward</name>
       <identifier>private.remap.app_excel_c_f_to_forward</identifier>
+      <only>EXCEL</only>
       <autogen>
-        __KeyToKey__ KeyCode::Y, ModifierFlag::CONTROL_L,
+        __KeyToKey__
+        KeyCode::Y, ModifierFlag::CONTROL_L,
         KeyCode::CURSOR_RIGHT
       </autogen>
     </item>
     <item>
-      <name>Change C-f to backword</name>
-      <identifier>private.remap.app_excel_c_f_to_backward</identifier>
+      <name>Change C-b to backword</name>
+      <identifier>private.remap.app_excel_c_b_to_backward</identifier>
+      <only>EXCEL</only>
       <autogen>
-        __KeyToKey__ KeyCode::N, ModifierFlag::CONTROL_L,
+        __KeyToKey__
+        KeyCode::N, ModifierFlag::CONTROL_L,
         KeyCode::CURSOR_LEFT
       </autogen>
     </item>
@@ -454,11 +649,32 @@
       <identifier>private.remap.chrome_command_dn_to_prevnext_window</identifier>
       <only>GOOGLE_CHROME</only>
       <autogen>
-        __KeyToKey__ KeyCode::H, ModifierFlag::COMMAND_L,
+        __KeyToKey__
+        KeyCode::H, ModifierFlag::COMMAND_L,
         KeyCode::TAB, ModifierFlag::CONTROL_L, ModifierFlag::SHIFT_L
       </autogen>
       <autogen>
-        __KeyToKey__ KeyCode::L, ModifierFlag::COMMAND_L,
+        __KeyToKey__
+        KeyCode::L, ModifierFlag::COMMAND_L,
+        KeyCode::TAB, ModifierFlag::CONTROL_L
+      </autogen>
+    </item>
+  </item>
+
+  <item>
+    <name>Chromium</name>
+    <item>
+      <name>Command+d/n to previous/next window</name>
+      <identifier>private.remap.chromium_command_dn_to_prevnext_window</identifier>
+      <only>Chromium</only>
+      <autogen>
+        __KeyToKey__
+        KeyCode::H, ModifierFlag::COMMAND_L,
+        KeyCode::TAB, ModifierFlag::CONTROL_L, ModifierFlag::SHIFT_L
+      </autogen>
+      <autogen>
+        __KeyToKey__
+        KeyCode::L, ModifierFlag::COMMAND_L,
         KeyCode::TAB, ModifierFlag::CONTROL_L
       </autogen>
     </item>
@@ -471,21 +687,26 @@
       <identifier>private.remap.terminal_command_dhtn_to_control_t_control_dhtn</identifier>
       <only>TERMINAL</only>
       <autogen>
-        __KeyToKey__ KeyCode::H, ModifierFlag::COMMAND_L,
+        __KeyToKey__
+        KeyCode::H, ModifierFlag::COMMAND_L,
         KeyCode::K, ModifierFlag::CONTROL_L, KeyCode::H, ModifierFlag::CONTROL_L
       </autogen>
       <autogen>
-        __KeyToKey__ KeyCode::J, ModifierFlag::COMMAND_L,
+        __KeyToKey__
+        KeyCode::J, ModifierFlag::COMMAND_L,
         KeyCode::K, ModifierFlag::CONTROL_L, KeyCode::J, ModifierFlag::CONTROL_L
       </autogen>
       <autogen>
-        __KeyToKey__ KeyCode::K, ModifierFlag::COMMAND_L,
+        __KeyToKey__
+        KeyCode::K, ModifierFlag::COMMAND_L,
         KeyCode::K, ModifierFlag::CONTROL_L, KeyCode::K, ModifierFlag::CONTROL_L
       </autogen>
       <autogen>
-        __KeyToKey__ KeyCode::L, ModifierFlag::COMMAND_L,
+        __KeyToKey__
+        KeyCode::L, ModifierFlag::COMMAND_L,
         KeyCode::K, ModifierFlag::CONTROL_L, KeyCode::L, ModifierFlag::CONTROL_L
       </autogen>
     </item>
   </item>
+
 </root>

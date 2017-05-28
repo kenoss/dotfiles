@@ -313,6 +313,19 @@
   </item>
 
   <item>
+    <name>C-h as backspace</name>
+    <item>
+      <name>C-h as backspace</name>
+      <identifier>private.remap.c_h_as_backspace</identifier>
+      <autogen>
+        __KeyToKey__
+        KeyCode::J, ModifierFlag::CONTROL_L,
+        KeyCode::DELETE
+      </autogen>
+    </item>
+  </item>
+
+  <item>
     <name>Fundamental key combinations</name>
     <item>
       <name>XMonad like keybindings</name>

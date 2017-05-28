@@ -157,6 +157,13 @@ For example:
           )
 
         (gkc-progn
+          (gkc-name "C-h as backspace")
+
+          (gkc-define-item "private.remap.c_h_as_backspace" "C-h as backspace"
+            (gkc-key-to-key "C-(h)" "DEL"))
+          )
+
+        (gkc-progn
           (gkc-name "Fundamental key combinations")
 
           (gkc-define-item "private.remap.xmonad_like_keybindings" "XMonad like keybindings"

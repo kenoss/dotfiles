@@ -1,0 +1,22 @@
+scriptencoding 'utf-8'
+
+if !&compatible
+  set nocompatible
+endif
+
+
+let g:vim_config_dir = empty($XDG_CONFIG_HOME) ? expand('~/.vim') : expand($XDG_CONFIG_HOME . '/vim')
+let g:cache_home = empty($XDG_CACHE_HOME) ? expand('~/.cache') : expand($XDG_CACHE_HOME)
+let g:rc_dir = g:vim_config_dir . '/rc'
+
+
+let s:load_rc = {file -> execute('source' . g:rc_dir . '/' . file . '.vim')}
+
+call s:load_rc('dein')  " load plugins
+call s:load_rc('set')   " setting variables
+call s:load_rc('map')   " key binding
+
+" mode specific setting {{{
+call s:load_rc('view-mode')
+call s:load_rc('diff-mode')
+" }}}

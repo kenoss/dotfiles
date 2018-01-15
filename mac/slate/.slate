@@ -8,11 +8,12 @@ config windowHintsIgnoreHiddenWindows false
 config windowHintsShowIcons true
 
 
-alias hyper alt;cmd
+# #alias hyper alt;cmd
+# alias hyper "fn"
 
-# Focus apps
-bind u:${hyper}  focus "ターミナル"
-bind e:${hyper}  focus "Emacs"
-bind .:${hyper}  focus "Google Chrome"
-bind p:${hyper}  focus "Firefox"
-bind a:${hyper}  focus "Slack"
+# # Focus apps
+# bind u:${hyper}  focus "ターミナル"
+# bind e:${hyper}  focus "Emacs"
+# bind .:${hyper}  focus "Google Chrome"
+# bind p:${hyper}  focus "Firefox"
+# bind a:${hyper}  focus "Slack"

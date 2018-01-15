@@ -1,0 +1,1 @@
+../../vimperator-plugins/walk-input.js

@@ -1,1 +1,0 @@
-../../vimperator-plugins/nicovideo_comment.js

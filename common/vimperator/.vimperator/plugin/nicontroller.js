@@ -1,1 +1,0 @@
-../../vimperator-plugins/nicontroller.js

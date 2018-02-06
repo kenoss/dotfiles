@@ -77,6 +77,12 @@ fi
 add-path-if-exists before-tail "$HOME/.lein"
 
 
+###
+### Utilities
+###
+
+add-path-if-exists before-tail '/usr/local/share/git-core/contrib/diff-highlight'
+
 
 ###
 ### Finalize

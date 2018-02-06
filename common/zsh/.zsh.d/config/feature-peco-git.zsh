@@ -5,7 +5,7 @@
 ###
 
 function git-repository-url () {
-    git remote -v | grep origin | grep fetch | gsed -r -e 's|^origin\t+(ssh://)?git@(.*).git .*$|\2|' | (read host; echo https://$host)
+    git remote -v | grep origin | grep fetch | gsed -r -e 's|^origin\t+(ssh://)?git@(.*)(:?.git)? .*$|\2|' | (read host; echo https://$host)
 }
 
 function peco-git-select-branch-internal () {

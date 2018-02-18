@@ -65,7 +65,7 @@ REPORTTIME=3
 WORDCHARS=${WORDCHARS:s,/,,}
 
 
-function cd() { builtin cd $@ && ls }
+function chpwd() { ls }
 
 
 #

@@ -1,0 +1,9 @@
+set main-view = id date author commit-title:graph=yes,refs=yes
+
+bind generic ? view-help
+bind generic t move-down
+bind generic h move-up
+bind generic T move-page-down
+bind generic H move-page-up
+bind generic w next
+bind generic m previous

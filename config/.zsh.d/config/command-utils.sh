@@ -44,13 +44,11 @@ function install-firefox-pref() {
 
 
 function install-git-config () {
-    local conf_dir=~/git.keno/dotfiles/common/git
-    local conf_path_common="$conf_dir/.gitconfig.common"
-    local conf_path_name="$conf_dir/.gitconfig.$1"
+    local conf_path="$HOME/.gitconfig.$1"
 
-    if [ ! -f "$conf_path_name" ]; then
-        echo "Config file not found: $conf_path_name"
+    if [ ! -f "$conf_path" ]; then
+        echo "Config file not found: $conf_path"
     else
-        (cd ~/ > /dev/null ; ln -sf "$conf_path_common" ; ln -sf "$conf_path_name" ~/.gitconfig)
+        ln -sf "$conf_path" ~/.gitconfig
     fi
 }

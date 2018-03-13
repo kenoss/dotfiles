@@ -43,10 +43,16 @@ fi
 ### Programming Languages
 ###
 
-# anyenv
-if [ -d "${HOME}/.anyenv" ] ; then
-    export PATH="$HOME/.anyenv/bin:$PATH"
-    eval "$(anyenv init -)"
+# rbenv
+if [ -d "${HOME}/.rbenv" ] ; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+fi
+
+# pyenv
+if [ -d "${HOME}/.pyenv" ] ; then
+    export PATH="$HOME/.pyenv/bin:$PATH"
+    eval "$(pyenv init -)"
 fi
 
 # For powerline

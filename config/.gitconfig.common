@@ -65,3 +65,6 @@
         pushinsteadof = "git://github.com/"
 [url "git@github.com:USERNAME/"]
         insteadof = gh:
+
+[ghq]
+        root = ~/src

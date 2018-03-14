@@ -62,7 +62,7 @@ add-path-if-exists after-tail "$HOME/.local/bin"
 add-path-if-exists after-tail  "$HOME/.cask/bin"
 
 # Golang
-export GOPATH="$HOME/bin/go"
+export GOPATH="$HOME"
 add-path-if-exists before-tail "$GOPATH/bin"
 
 # Rust

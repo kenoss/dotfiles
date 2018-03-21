@@ -15,5 +15,6 @@ include_cookbook 'peco'
 
 dotfile '.config'
 dotfile '.peco'
+dotfile '.tmux'
 dotfile '.tmux.conf'
 dotfile '.tigrc'

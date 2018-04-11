@@ -1,6 +1,8 @@
 *~
+\#*\#
 .DS_Store
 .agignore
 .rgignore
 tags
 TAGS
+.mypy_cache

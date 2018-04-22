@@ -14,6 +14,8 @@ cargo 'cargo-edit'
 cargo 'cargo-script'
 cargo 'cargo-update'
 
+include_cookbook 'roswell'
+
 include_cookbook 'vim'
 include_cookbook 'zsh'
 include_cookbook 'ghq'

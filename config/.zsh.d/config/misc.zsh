@@ -65,8 +65,6 @@ REPORTTIME=3
 WORDCHARS=${WORDCHARS:s,/,,}
 
 
-function chpwd() { ls }
-
 
 #
 ###

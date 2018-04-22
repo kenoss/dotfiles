@@ -25,6 +25,10 @@ unless ENV['PATH'].include?("#{ENV['HOME']}/.cargo/bin:")
   ENV['PATH'] = "#{ENV['HOME']}/.cargo/bin:#{ENV['PATH']}"
 end
 
+execute 'rustup component add rust-src' do
+  not_if 'rustup component list | grep "rust-src (installed)" >/dev/null'
+end
+
 define :cargo do
   execute "cargo install --verbose #{params[:name]}" do
     not_if %Q[cargo install --list | grep "^#{params[:name]} "]

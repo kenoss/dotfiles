@@ -65,6 +65,9 @@ add-path-if-exists after-tail  "$HOME/.cask/bin"
 export GOPATH="$HOME/bin/go"
 add-path-if-exists before-tail "$GOPATH/bin"
 
+# Rust
+add-path-if-exists before-tail "$HOME/.cargo/bin"
+
 # Common Lisp
 export CIM_HOME="$HOME/.cim"; [ -s "$CIM_HOME/init.sh" ] && source "$CIM_HOME/init.sh"
 add-path-if-exists before-tail "$HOME/.shelly/bin"

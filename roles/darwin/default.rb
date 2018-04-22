@@ -8,6 +8,12 @@ include_cookbook 'pyenv'
 pip 'virtualenv'
 pip 'powerline-status'
 
+include_cookbook 'rust'
+cargo 'racer'
+cargo 'cargo-edit'
+cargo 'cargo-script'
+cargo 'cargo-update'
+
 include_cookbook 'vim'
 include_cookbook 'zsh'
 include_cookbook 'ghq'

@@ -1,4 +1,8 @@
-common/git/.gitconfig.company
-common/zsh/.zsh.d/.zcompdump
-common/zsh/.zsh.d/.zsh_history
-common/zsh/.zsh.d/config/company.sh
+bin/mitamae*
+config/.gitconfig.company
+config/.tmux/plugins
+!config/.tmux/plugins/tpm
+config/.tmux/resurrect
+config/.zsh.d/.zcompdump
+config/.zsh.d/.zsh_history
+config/.zsh.d/config/company.sh

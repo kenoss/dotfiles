@@ -1,6 +1,0 @@
-#! /usr/bin/env bash
-
-FIREFOX="/Applications/Firefox.app/Contents/MacOS/firefox"
-PROFILEDIR="$HOME/Library/Application Support/Firefox/Profiles"
-
-$FIREFOX --no-remote --profile "$PROFILEDIR/$1" &> /dev/null &

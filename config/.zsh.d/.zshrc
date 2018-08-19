@@ -15,4 +15,3 @@ load-zsh-config config/feature-peco-misc.zsh
 load-zsh-config config/misc.zsh
 load-zsh-config config/bindings.zsh
 load-zsh-config config/tmp.sh
-load-zsh-config config/company.sh

@@ -124,3 +124,10 @@ export PROMPT2='%F{red}         ${USER}@${HOSTNAME} %! >%k%f '
 
 export LSCOLORS=gxdxxxxxcxxAxAcAcAgAgA
 zstyle ':completion:*' list-colors 'di=;36' 'ln=;33' 'ex=32'
+
+
+###
+### direnv
+###
+
+eval "$(direnv hook zsh)"

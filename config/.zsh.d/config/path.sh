@@ -1,3 +1,9 @@
+# Java
+if [ -x /usr/libexec/java_home ]; then
+    export JAVA_HOME=$(/usr/libexec/java_home)
+fi
+
+
 ###
 ### Auxiliary functions
 ###
@@ -79,11 +85,6 @@ add-path-if-exists before-tail "$HOME/.cabal/bin"
 
 # Scala
 add-path-if-exists before-tail "$HOME/bin.local/activator"
-
-# Java
-if type java > /dev/null; then
-    export JAVA_HOME=$(/usr/libexec/java_home)
-fi
 
 add-path-if-exists before-tail "$HOME/.lein"
 

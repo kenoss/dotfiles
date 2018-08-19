@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+source "$ZDOTDIR"/config/antigen.zsh
+
 load-zsh-config lib/rprompt-git-current-branch.zsh
 
 load-zsh-config config/path.sh

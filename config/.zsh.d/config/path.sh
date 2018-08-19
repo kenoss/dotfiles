@@ -55,6 +55,12 @@ if [ -d "${HOME}/.pyenv" ] ; then
     eval "$(pyenv init -)"
 fi
 
+# ndenv
+if [ -d "${HOME}/.ndenv" ] ; then
+    export PATH="$HOME/.ndenv/bin:$PATH"
+    eval "$(ndenv init -)"
+fi
+
 # For powerline
 add-path-if-exists after-tail "$HOME/.local/bin"
 

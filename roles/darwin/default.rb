@@ -8,6 +8,8 @@ include_cookbook 'pyenv'
 pip 'virtualenv'
 pip 'powerline-status'
 
+include_cookbook 'ndenv'
+
 include_cookbook 'rust'
 cargo 'racer'
 cargo 'cargo-edit'

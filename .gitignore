@@ -6,3 +6,4 @@ config/.tmux/resurrect
 config/.zsh.d/.zcompdump
 config/.zsh.d/.zsh_history
 config/.zsh.d/config/company.sh
+config/.config/gcloud

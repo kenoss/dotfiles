@@ -1,8 +1,8 @@
 scriptencoding utf-8
 
 
-nnoremap ; :
-nnoremap : ;
+noremap ; :
+noremap : ;
 
 
 " Turn off dangerous key maps {{{

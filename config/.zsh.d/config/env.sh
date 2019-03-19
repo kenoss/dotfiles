@@ -1,3 +1,5 @@
+export DOCKER_BUILDKIT=1
+
 ###
 ### TeX
 ###

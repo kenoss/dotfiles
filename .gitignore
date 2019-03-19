@@ -11,3 +11,4 @@ config/.zsh.d/.zsh_history
 config/.zsh.d/config/company.sh
 config/.config/direnv
 config/.config/gcloud
+config/.config/pudb/

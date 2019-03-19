@@ -1,0 +1,4 @@
+[[snippets]]
+  description = "Ensure POSIX EOF newline of files with name .txt under the current directory"
+  command = "find . -name .git -prune -o -type f -name '*.txt' -exec sh -c \"tail -1 {} | xxd -p | tail -1 | grep -q -v 0a$\" ';' -exec sh -c \"echo >> {}\" ';'"
+  output = ""

@@ -70,3 +70,5 @@
 
 [ghq]
         root = ~/src
+[credential "https://source.developers.google.com"]
+	helper = gcloud.sh

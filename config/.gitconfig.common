@@ -24,6 +24,8 @@
         b  = branch
         br = branch
         com = commit
+        coma = commit --amend --no-edit
+        comm = commit --amend --allow-empty
         cho = checkout
         chp = cherry-pick -n
         mff = merge --ff

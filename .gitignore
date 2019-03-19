@@ -4,6 +4,7 @@ bin/mitamae*
 config/.gitconfig.company
 config/.tmux/plugins
 !config/.tmux/plugins/tpm
+config/.config/gcloud
 config/.tmux/resurrect
 config/.zsh.d/.zcompdump
 config/.zsh.d/.zsh_history

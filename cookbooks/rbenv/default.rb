@@ -1,9 +1,8 @@
 node.reverse_merge!(
   rbenv: {
-    global: '2.3.1',
+    global: '2.5.0',
     versions: %w[
-      2.3.1
-      2.2.5
+      2.5.0
     ],
   }
 )

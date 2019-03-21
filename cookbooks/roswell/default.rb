@@ -1,4 +1,4 @@
-default = 'sbcl/1.4.6'
+default = 'sbcl/1.5.0'
 
 result = run_command('type -p ros', error: false)
 if result.exit_status != 0

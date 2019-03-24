@@ -1,5 +1,6 @@
 node.reverse_merge!(
   pyenv: {
+    scheme: 'git',
     global: '3.4.3',
     versions: %w[
       3.4.3

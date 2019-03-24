@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
 
+
+# Comment out when profiling zshrc
+# zmodload zsh/zprof && zprof
+
+
 source "$ZDOTDIR"/config/antigen.zsh
 
 load-zsh-config lib/rprompt-git-current-branch.zsh
@@ -16,3 +21,8 @@ load-zsh-config config/feature-pet.zsh
 load-zsh-config config/misc.zsh
 load-zsh-config config/bindings.zsh
 load-zsh-config config/tmp.sh
+
+
+if (which zprof > /dev/null 2>&1) ;then
+    zprof
+fi

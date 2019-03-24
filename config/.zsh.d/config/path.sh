@@ -94,6 +94,7 @@ add-path-if-exists before-tail "$HOME/.lein"
 ###
 
 add-path-if-exists before-tail '/usr/local/share/git-core/contrib/diff-highlight'
+add-path-if-exists after-tail "$HOME/bin/google-cloud-sdk/bin"
 
 
 ###

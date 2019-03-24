@@ -43,7 +43,7 @@ function install-firefox-pref() {
 }
 
 
-function install-git-config () {
+function use-git-config () {
     local conf_path="$HOME/.gitconfig.$1"
 
     if [ ! -f "$conf_path" ]; then

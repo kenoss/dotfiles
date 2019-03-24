@@ -52,19 +52,19 @@ fi
 # rbenv
 if [ -d "${HOME}/.rbenv" ] ; then
     export PATH="$HOME/.rbenv/bin:$PATH"
-    eval "$(rbenv init -)"
+    eval "$(rbenv init --no-rehash -)"
 fi
 
 # pyenv
 if [ -d "${HOME}/.pyenv" ] ; then
     export PATH="$HOME/.pyenv/bin:$PATH"
-    eval "$(pyenv init -)"
+    eval "$(pyenv init --no-rehash -)"
 fi
 
 # ndenv
 if [ -d "${HOME}/.ndenv" ] ; then
     export PATH="$HOME/.ndenv/bin:$PATH"
-    eval "$(ndenv init -)"
+    eval "$(ndenv init --no-rehash -)"
 fi
 
 # For powerline

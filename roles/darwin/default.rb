@@ -1,5 +1,7 @@
 include_role 'base'
 
+include_cookbook 'mac_homebrew'
+
 include_cookbook 'git'
 
 include_cookbook 'rbenv'

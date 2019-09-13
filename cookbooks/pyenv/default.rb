@@ -1,9 +1,9 @@
 node.reverse_merge!(
   pyenv: {
     scheme: 'git',
-    global: '3.6.8 2.7.16',
+    global: '3.7.4 2.7.16',
     versions: %w[
-      3.6.8
+      3.7.4
       2.7.16
     ],
   }

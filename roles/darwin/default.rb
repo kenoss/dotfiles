@@ -25,6 +25,8 @@ include_cookbook 'zsh'
 include_cookbook 'ghq'
 include_cookbook 'peco'
 
+include_cookbook 'font-ricty'
+
 dotfile '.config'
 dotfile '.peco'
 dotfile '.tmux'

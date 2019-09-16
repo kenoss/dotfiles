@@ -19,8 +19,8 @@ load-zsh-config config/command-peco.sh
 load-zsh-config config/feature-peco-misc.zsh
 load-zsh-config config/feature-pet.zsh
 load-zsh-config config/misc.zsh
+load-zsh-config config/powerline.sh
 load-zsh-config config/bindings.zsh
-load-zsh-config config/tmp.sh
 
 
 if (which zprof > /dev/null 2>&1) ;then

@@ -2,9 +2,7 @@
 
 bin/mitamae*
 
-config/.config/direnv/
-config/.config/gcloud/
-config/.config/pudb/
+config/.config/karabiner/automatic_backups/
 config/.tmux/plugins/
 !config/.tmux/plugins/tpm/
 config/.tmux/resurrect/

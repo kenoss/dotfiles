@@ -5,6 +5,11 @@ node.reverse_merge!(
 define :dotfile, source: nil do
   source = params[:source] || params[:name]
   dest = File.join(ENV['HOME'], params[:name])
+  dir = File.dirname(dest)
+  directory dir do
+    user node[:user]
+    not_if "test -d #{dir}"
+  end
   link dest do
     to File.expand_path("../../../config/#{source}", __FILE__)
     user node[:user]

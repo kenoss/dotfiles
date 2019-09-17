@@ -27,7 +27,9 @@ include_cookbook 'peco'
 
 include_cookbook 'font-ricty'
 
-dotfile '.config'
+dotfile '.config/karabiner'
+dotfile '.config/pet'
+dotfile '.config/powerline'
 dotfile '.peco'
 dotfile '.tmux'
 dotfile '.tmux.conf'

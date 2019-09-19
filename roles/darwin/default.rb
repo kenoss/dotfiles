@@ -24,6 +24,7 @@ include_cookbook 'vim'
 include_cookbook 'zsh'
 include_cookbook 'ghq'
 include_cookbook 'peco'
+include_cookbook 'powerline-go'
 
 include_cookbook 'font-ricty'
 

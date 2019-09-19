@@ -28,17 +28,19 @@ define :github_binary, version: nil, repository: nil, archive: nil, binary_path:
   elsif archive.end_with?('.tar.gz')
     extract = "tar xvzf"
   else
-    raise "unexpected ext archive: #{archive}"
+    extract = nil
   end
 
   execute "curl -fSL -o /tmp/#{archive} #{url}" do
     not_if "test -f #{bin_path}"
   end
-  execute "#{extract} /tmp/#{archive}" do
-    not_if "test -f #{bin_path}"
-    cwd "/tmp"
+  if extract
+    execute "hoge #{extract} /tmp/#{archive}" do
+      not_if "test -f #{bin_path}"
+      cwd "/tmp"
+    end
   end
-  execute "mv /tmp/#{params[:binary_path] || cmd} #{bin_path} && chmod +x #{path}" do
+  execute "mv /tmp/#{params[:binary_path] || cmd} #{bin_path} && chmod +x #{bin_path}" do
     not_if "test -f #{bin_path}"
   end
 end

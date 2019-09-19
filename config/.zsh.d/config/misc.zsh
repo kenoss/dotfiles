@@ -1,37 +1,7 @@
-# -*- mode: shell-script -*-
-
-HOSTNAME=$(hostname)
-
 ## LANG
-if [ "$TERM" = "cons25" ]; then
-  export LANG=C
-#  export LC_ALL=C
-else
-#  export LANG=ja_JP.eucJP
-#  export LC_ALL=ja_JP.eucJP
-#  export LANG=ja_JP.UTF-8
-#  export LC_ALL=C
-  export LANG="ja_JP.UTF-8"
-  export LC_ALL="C"
-  # export LC_ALL="ja_JP.UTF-8"
-  # export LC_CTYPE="ja_JP.UTF-8"
-  # export LC_NUMERIC="ja_JP.UTF-8"
-  # export LC_TIME="ja_JP.UTF-8"
-  # export LC_COLLATE="ja_JP.UTF-8"
-  # export LC_MONETARY="ja_JP.UTF-8"
-  # export LC_MESSAGES="ja_JP.UTF-8"
-  # export LC_PAPER="ja_JP.UTF-8"
-  # export LC_NAME="ja_JP.UTF-8"
-  # export LC_ADDRESS="ja_JP.UTF-8"
-  # export LC_TELEPHONE="ja_JP.UTF-8"
-  # export LC_MEASUREMENT="ja_JP.UTF-8"
-  # export LC_IDENTIFICATION="ja_JP.UTF-8"
-fi
 
+export LANG=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8
-
-
-eval `tset -s rxvt-256color` > /dev/null
 
 
 
@@ -93,18 +63,6 @@ setopt hist_verify
 setopt hist_ignore_space
 setopt hist_reduce_blanks
 
-zshaddhistory() {
-    local line=${1%%$'\n'}
-    local cmd=${line%% *}
-
-    # 以下の条件をすべて満たすものだけをヒストリに追加する
-    [[ ${#line} -ge 5
-        && ${cmd} != l
-        && ${cmd} != c
-        && ${cmd} != m
-        && ${line} != cd*\;xdvi\ -sourceposition*\& # for xdvi-jump-to-line in emacs
-    ]]
-}
 
 
 #
@@ -112,9 +70,12 @@ zshaddhistory() {
 ### prompt
 ###
 
+HOSTNAME=$(hostname)
+
 setopt prompt_subst
 export PROMPT='%F{red}%D{%H:%M:%S} ${USER}@${HOSTNAME} %! %(!.#.$)%k%f '
 export PROMPT2='%F{red}         ${USER}@${HOSTNAME} %! >%k%f '
+
 
 
 #
@@ -124,6 +85,7 @@ export PROMPT2='%F{red}         ${USER}@${HOSTNAME} %! >%k%f '
 
 export LSCOLORS=gxdxxxxxcxxAxAcAcAgAgA
 zstyle ':completion:*' list-colors 'di=;36' 'ln=;33' 'ex=32'
+
 
 
 ###

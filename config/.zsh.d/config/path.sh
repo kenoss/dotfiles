@@ -46,26 +46,46 @@ fi
 
 
 ###
-### Programming Languages
+### anyenv
 ###
 
-# rbenv
-if [ -d "${HOME}/.rbenv" ] ; then
-    export PATH="$HOME/.rbenv/bin:$PATH"
-    eval "$(rbenv init --no-rehash -)"
-fi
+CACHE_DIR="$HOME/.zsh.d/cache/$(basename $SHELL)"
 
-# pyenv
-if [ -d "${HOME}/.pyenv" ] ; then
-    export PATH="$HOME/.pyenv/bin:$PATH"
-    eval "$(pyenv init --no-rehash -)"
-fi
 
-# ndenv
-if [ -d "${HOME}/.ndenv" ] ; then
-    export PATH="$HOME/.ndenv/bin:$PATH"
-    eval "$(ndenv init --no-rehash -)"
-fi
+function keu-anyenv-clear-cache {
+    rm -rf "$CACHE_DIR"
+}
+
+function _keu-anyenv-make-cache {
+    local target=$1
+    local cache_path="$CACHE_DIR/$target.sh"
+
+    mkdir -p $(dirname "$cache_path")
+    $target init --no-rehash - > $cache_path
+}
+
+function _keu-anyenv-init {
+    local target=$1
+    local cache_path="$CACHE_DIR/$target.sh"
+
+    if [ -d "${HOME}/.$target" ] ; then
+        if [ ! -f "$cache_path" ]; then
+            _keu-anyenv-make-cache $target
+        fi
+
+        source "$cache_path"
+    fi
+}
+
+
+_keu-anyenv-init pyenv
+_keu-anyenv-init rbenv
+_keu-anyenv-init ndenv
+
+
+###
+### Programming Languages
+###
 
 # For powerline
 add-path-if-exists after-tail "$HOME/.local/bin"

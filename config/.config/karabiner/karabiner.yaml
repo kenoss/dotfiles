@@ -641,15 +641,40 @@ profiles:
         to:
         - shell_command: "/usr/bin/open /Applications/Google\ Chrome.app"
         type: basic
+      - description: MouseButton5 -> C-<left>
+        type: basic
+        from:
+          pointing_button: button5
+        to:
+        - modifiers:
+          - left_control
+          key_code: left_arrow
+      - description: MouseButton4 -> C-<right>
+        type: basic
+        from:
+          pointing_button: button4
+        to:
+        - modifiers:
+          - left_control
+          key_code: right_arrow
   devices:
-  - disable_built_in_keyboard_if_exists: true
-    fn_function_keys: []
-    identifiers:
+  - identifiers:
       is_keyboard: true
       is_pointing_device: false
-      product_id: 13
       vendor_id: 1278
+      product_id: 13
     ignore: false
+    disable_built_in_keyboard_if_exists: true
+    fn_function_keys: []
+    simple_modifications: []
+  - identifiers:
+      is_keyboard: false
+      is_pointing_device: true
+      vendor_id: 1133
+      product_id: 50475
+    ignore: false
+    disable_built_in_keyboard_if_exists: false
+    fn_function_keys: []
     simple_modifications: []
   fn_function_keys:
   - from:

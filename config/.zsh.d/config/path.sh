@@ -87,12 +87,6 @@ _keu-anyenv-init ndenv
 ### Programming Languages
 ###
 
-# For powerline
-add-path-if-exists after-tail "$HOME/.local/bin"
-
-# Emacs Cask
-add-path-if-exists after-tail  "$HOME/.cask/bin"
-
 # Golang
 export GOPATH="$HOME"
 add-path-if-exists before-tail "$GOPATH/bin"
@@ -100,13 +94,11 @@ add-path-if-exists before-tail "$GOPATH/bin"
 # Rust
 add-path-if-exists before-tail "$HOME/.cargo/bin"
 
+# Common Lisp
+add-path-if-exists before-tail "$GOPATH/.roswell/bin"
+
 # Haskell
 add-path-if-exists before-tail "$HOME/.cabal/bin"
-
-# Scala
-add-path-if-exists before-tail "$HOME/bin.local/activator"
-
-add-path-if-exists before-tail "$HOME/.lein"
 
 
 ###

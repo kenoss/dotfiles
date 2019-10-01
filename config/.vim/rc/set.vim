@@ -26,8 +26,13 @@ set incsearch  " インクリメンタルサーチ
 " }}}
 
 " 画面表示 {{{
+if ($COLORTERM ==# 'truecolor') || ($COLORTERM ==# '24bit')
+  set termguicolors
+else
+  set t_Co=256
+endif
+
 set ambiwidth=single     " 文字幅の指定が曖昧なときは半角と見なす
-set t_Co=256             " 256 色表示ターミナル対応
 set showcmd              " コマンド、及び選択範囲の表示
 set noshowmode           " 【挿入】【ビジュアル】といった文字列を画面最下段に表示しない
 set showmatch            " 対応する括弧を自動的に装飾して表示

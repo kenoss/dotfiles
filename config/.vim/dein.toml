@@ -13,13 +13,13 @@ repo = 'cespare/vim-toml'
 on_ft = 'toml'
 
 [[plugins]] # カラースキーマ
-repo = 'nanotech/jellybeans.vim'
+repo = 'cocopon/iceberg.vim'
 hook_add = '''
   set background=dark
   " colorscheme 設定は source 後に行う必要があるので VimEnter で行う.
   " 但し Colorscheme イベントの発生が抑制されないよう nested を付ける.
   augroup vimrc-colorscheme
     autocmd!
-    autocmd VimEnter * nested colorscheme jellybeans
+    autocmd VimEnter * nested colorscheme iceberg
   augroup END
 '''

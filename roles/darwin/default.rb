@@ -27,6 +27,7 @@ include_cookbook 'peco'
 
 include_cookbook 'font-ricty'
 
+dotfile '.config/alacritty'
 dotfile '.config/karabiner'
 dotfile '.config/pet'
 dotfile '.config/powerline'

@@ -32,6 +32,13 @@ else
   set t_Co=256
 endif
 
+" Cursor shape
+if has('vim_starting')
+  let &t_EI .= "\e[2 q" " block cursor for normal mode
+  let &t_SI .= "\e[6 q" " vertical line for insertion mode
+  let &t_SR .= "\e[4 q" " underline for replace mode
+endif
+
 set ambiwidth=single     " 文字幅の指定が曖昧なときは半角と見なす
 set showcmd              " コマンド、及び選択範囲の表示
 set noshowmode           " 【挿入】【ビジュアル】といった文字列を画面最下段に表示しない

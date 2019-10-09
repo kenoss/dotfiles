@@ -35,7 +35,7 @@ define :github_binary, version: nil, repository: nil, archive: nil, binary_path:
     not_if "test -f #{bin_path}"
   end
   if extract
-    execute "hoge #{extract} /tmp/#{archive}" do
+    execute "#{extract} /tmp/#{archive}" do
       not_if "test -f #{bin_path}"
       cwd "/tmp"
     end

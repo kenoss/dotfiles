@@ -7,6 +7,3 @@
 [submodule "config/.zsh.d/plugins/antigen"]
 	path = config/.zsh.d/plugins/antigen
 	url = https://github.com/zsh-users/antigen
-[submodule "cookbooks/font-ricty/files/repo"]
-	path = cookbooks/font-ricty/files/repo
-	url = https://github.com/mzyy94/RictyDiminished-for-Powerline

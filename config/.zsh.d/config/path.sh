@@ -34,8 +34,7 @@ function add-path-if-exists () {
 ### System commands
 ###
 
-add-path-if-exists before-tail "$HOME/bin"
-add-path-if-exists before-tail "$HOME/local/bin"
+add-path-if-exists before-tail "$HOME/.local/bin"
 
 # mac
 if [ "$(uname)" = 'Darwin' ]; then
@@ -61,19 +60,20 @@ function _keu-anyenv-make-cache {
     local cache_path="$CACHE_DIR/$target.sh"
 
     mkdir -p $(dirname "$cache_path")
-    $target init --no-rehash - > $cache_path
+    "$HOME/.$target/bin/$target" init --no-rehash - > $cache_path
 }
 
 function _keu-anyenv-init {
     local target=$1
     local cache_path="$CACHE_DIR/$target.sh"
 
-    if [ -d "${HOME}/.$target" ] ; then
+    if [ -d "$HOME/.$target" ] ; then
         if [ ! -f "$cache_path" ]; then
             _keu-anyenv-make-cache $target
         fi
 
         source "$cache_path"
+        add-path-if-exists before-tail "$HOME/.$target/bin"
     fi
 }
 

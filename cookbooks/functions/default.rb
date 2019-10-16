@@ -19,7 +19,7 @@ end
 
 define :github_binary, version: nil, repository: nil, archive: nil, binary_path: nil do
   cmd = params[:name]
-  bin_path = "#{ENV['HOME']}/bin/#{cmd}"
+  bin_path = "#{ENV['HOME']}/.local/bin/#{cmd}"
   archive = params[:archive]
   url = "https://github.com/#{params[:repository]}/releases/download/#{params[:version]}/#{archive}"
 

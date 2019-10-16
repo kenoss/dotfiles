@@ -38,6 +38,7 @@ bindkey '^u^l' peco-tmux-select-window
 
 
 # peco ghq
+bindkey '^u^h' peco-ghq
 bindkey '^u^?' peco-ghq
 
 

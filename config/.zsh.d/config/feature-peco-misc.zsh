@@ -51,3 +51,16 @@ function peco-history-select () {
 }
 
 zle -N peco-history-select
+
+
+
+function peco-git-select-files {
+    local files=$(git status --porcelain | awk '{print $2}' | peco | tr \\n ' ')
+
+    if [ -n "$files" ]; then
+        LBUFFER="${LBUFFER}${files}"
+    fi
+}
+
+zle -N peco-git-select-files
+bindkey "^u^a" peco-git-select-files

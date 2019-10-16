@@ -19,7 +19,7 @@ bindkey "^N" history-beginning-search-forward-end
 # Kill and yank
 load-zsh-config config/feature-kill-yank.zsh
 bindkey "^k" copy-line-as-kill
-bindkey "^y" paste-as-yank
+# bindkey "^y" paste-as-yank
 
 
 # Expand abbrev

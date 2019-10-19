@@ -2,9 +2,9 @@ node.reverse_merge!(
   ndenv: {
     user: node[:user],
     scheme: 'https',
-    global: 'v11.12.0',
+    global: 'v12.12.0',
     versions: %w[
-      v11.12.0
+      v12.12.0
     ],
   },
 )

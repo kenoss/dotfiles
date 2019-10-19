@@ -33,6 +33,11 @@ git File.join(ndenv[:ndenv_root], 'plugins/node-build') do
   user ndenv[:user] if ndenv[:user]
 end
 
+git File.join(ndenv[:ndenv_root], 'plugins/ndenv-yarn-install') do
+  repository "#{ndenv[:scheme]}://github.com/pine/ndenv-yarn-install.git"
+  user ndenv[:user] if ndenv[:user]
+end
+
 ndenv_init = "
   export NDENV_ROOT=#{ndenv[:ndenv_root]}
   export PATH=\"#{ENV['HOME']}/.ndenv/bin:$PATH\"

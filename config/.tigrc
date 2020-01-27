@@ -7,3 +7,6 @@ bind generic T move-page-down
 bind generic H move-page-up
 bind generic w next
 bind generic m previous
+
+bind main    R !git rebase -i %(commit)
+bind diff    R !git rebase -i %(commit)

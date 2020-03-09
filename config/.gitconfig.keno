@@ -3,5 +3,5 @@
 [include]
         path = .gitconfig.common
 [user]
-        name = Ken OKADA
+        name = Ken Okada
         email = keno.ss57@gmail.com

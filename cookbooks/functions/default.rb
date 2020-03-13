@@ -31,16 +31,24 @@ define :github_binary, version: nil, repository: nil, archive: nil, binary_path:
     extract = nil
   end
 
+  if extract
+    src = "/tmp/#{params[:binary_path] || cmd}"
+  else
+    src = "/tmp/#{archive}"
+  end
+
   execute "curl -fSL -o /tmp/#{archive} #{url}" do
     not_if "test -f #{bin_path}"
   end
+
   if extract
     execute "#{extract} /tmp/#{archive}" do
       not_if "test -f #{bin_path}"
       cwd "/tmp"
     end
   end
-  execute "mv /tmp/#{params[:binary_path] || cmd} #{bin_path} && chmod +x #{bin_path}" do
+
+  execute "install -m 755 -o #{node[:user]} -g #{node[:user]} #{src} #{bin_path}" do
     not_if "test -f #{bin_path}"
   end
 end

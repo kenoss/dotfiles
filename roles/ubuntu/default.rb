@@ -2,11 +2,11 @@ include_role 'base'
 
 include_cookbook 'git'
 
-include_cookbook 'rbenv'
+# include_cookbook 'rbenv'
 
 include_cookbook 'pyenv'
 
-include_cookbook 'ndenv'
+# include_cookbook 'ndenv'
 
 include_cookbook 'rust'
 # cargo 'racer'
@@ -14,7 +14,7 @@ include_cookbook 'rust'
 # cargo 'cargo-script'
 # cargo 'cargo-update'
 
-include_cookbook 'roswell'
+# include_cookbook 'roswell'
 
 include_cookbook 'vim'
 include_cookbook 'zsh'

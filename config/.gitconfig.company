@@ -1,7 +1,0 @@
-# -*- mode: gitconfig -*-
-
-[include]
-        path = .gitconfig.common
-[user]
-        name = Takeshi OKADA
-        email = takeshi.okada@dena.com

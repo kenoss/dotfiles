@@ -93,3 +93,13 @@ zstyle ':completion:*' list-colors 'di=;36' 'ln=;33' 'ex=32'
 ###
 
 eval "$(direnv hook zsh)"
+
+
+###
+### gcloud
+###
+
+export CLOUDSDK_PYTHON=python
+
+source "$HOME/.local/bin/google-cloud-sdk/completion.zsh.inc"
+source "$HOME/.local/bin/google-cloud-sdk/path.zsh.inc"

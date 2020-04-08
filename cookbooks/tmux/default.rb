@@ -1,4 +1,4 @@
 package 'tmux'
-package 'xclip'
+package 'xsel'
 
 dotfile '.tmux.conf'

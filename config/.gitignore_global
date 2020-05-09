@@ -3,6 +3,7 @@
 .DS_Store
 .agignore
 .rgignore
+.envrc
 tags
 TAGS
 .mypy_cache

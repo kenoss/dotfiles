@@ -42,8 +42,6 @@ alias iconvEU="iconv -f EUC-JP -t UTF-8"
 function lsEU() { ls $@ | iconv -f EUC-JP -t UTF-8 }
 alias lse="lsEU -G"
 
-alias k='kubectl'
-
 
 #
 ###

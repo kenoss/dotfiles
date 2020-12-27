@@ -559,6 +559,15 @@ colors:
 #
 # If the same trigger is assigned to multiple actions, all of them are executed
 # at once.
+key_bindings:
+  - { key: D, mods: Super, chars: "\x14\x04" }
+  - { key: H, mods: Super, chars: "\x14\x08" }
+  - { key: T, mods: Super, chars: "\x14\x14" }
+  - { key: N, mods: Super, chars: "\x14\x0e" }
+  - { key: D, mods: Super|Shift, chars: "\x14\x44" }
+  - { key: H, mods: Super|Shift, chars: "\x14\x48" }
+  - { key: T, mods: Super|Shift, chars: "\x14\x54" }
+  - { key: N, mods: Super|Shift, chars: "\x14\x4e" }
 #key_bindings:
   #- { key: Paste,                                action: Paste          }
   #- { key: Copy,                                 action: Copy           }

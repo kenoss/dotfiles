@@ -2,8 +2,10 @@
 
 [core]
         excludesfile = ~/.gitignore_global
-        pager = less -RS
+        pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
 	editor = vim
+[interactive]
+	diffFilter = delta --color-only
 [color]
 	ui = auto
 [pager]

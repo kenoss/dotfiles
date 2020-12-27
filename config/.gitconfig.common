@@ -1,77 +1,77 @@
 # -*- mode: gitconfig -*-
 
 [core]
-        excludesfile = ~/.gitignore_global
-        pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
-	editor = vim
+    excludesfile = ~/.gitignore_global
+    pager = delta --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
+    editor = vim
 [interactive]
-	diffFilter = delta --color-only
+    diffFilter = delta --color-only
 [color]
-	ui = auto
+    ui = auto
 [pager]
-        # diff = diff-highlight | less
-        # Pseudo `less -SF`.
-        gr = cut -c 1-$(($(tput cols) + 21)) && echo
+    # diff = diff-highlight | less
+    # Pseudo `less -SF`.
+    gr = cut -c 1-$(($(tput cols) + 21)) && echo
 [pretty]
-	olmid  = format:%C(yellow)%h %C(reset)[%ad] %C(blue)%an %C(red)%d %C(reset)%s
-	olmidc = format:%C(yellow)%h %C(reset)[%ad] %C(blue)%an %C(green)%cn %C(red)%d %C(reset)%s
+    olmid  = format:%C(yellow)%h %C(reset)[%ad] %C(blue)%an %C(red)%d %C(reset)%s
+    olmidc = format:%C(yellow)%h %C(reset)[%ad] %C(blue)%an %C(green)%cn %C(red)%d %C(reset)%s
 [alias]
-	with-origin-branch = "!f() { local branch=origin/$(git rev-parse --abbrev-ref HEAD); if git branch -a | grep \"$branch\" > /dev/null; then $@ $branch; else echo \"Branch not found: $branch\"; exit 1; fi }; f"
-	remote-origin-http-url = "!f() { git config --get remote.origin.url | pcregrep -o '(?<=git@).*(?=\\.git)' | sed -e 's|:|/|g' | xargs printf 'https://%s\n'; }; f"
-        s  = status --branch --short
-        st = status --branch --short
-        # Do not show untracked files.  Show not staged and staged.
-        stt = status -uno
-        su = submodule update
-        b  = branch
-        br = branch
-        com = commit
-        coma = commit --amend --no-edit
-        comm = commit --amend --allow-empty
-        cho = checkout
-        chp = cherry-pick -n
-        mff = merge --ff
-        mffo = "!f() { git with-origin-branch git merge --ff; }; f"
-        mt = mergetool
-        d     = diff
-        ds    = diff --stat
-        dw    = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
-        diffs = diff --stat
-        diffw = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
-        dt = difftool -y
-        l    = log --date=short --decorate=short --format=olmid
-        gr   = log --graph --date=iso --decorate=short --format=olmid -20
-        grl  = log --graph --date=iso --decorate=short --format=olmid
-        grlc = log --graph --date=iso --decorate=short --format=olmidc
-        gra  = log --graph --date=iso --decorate=short --format=olmid --all
-        gro  = "!f() { git with-origin-branch git gr; }; f"
-	maybe-pr-commit = "!f() { test -n \"$1\" && git log --ancestry-path --merges --reverse --oneline $1...${2:-HEAD} | grep 'Merge pull request #' | head -1; }; f"
-	maybe-pr-url    = "!f() { git maybe-pr-commit $1 | pcregrep -o '(?<=Merge pull request #)\\d+(?= )' | xargs printf '%s/pull/%s\n' $(git remote-origin-http-url); }; f"
-        delete-merged-branches = "!f() { git branch --merged ${1:-HEAD} | grep -v \\* | xargs -I % git branch -D % ; }; f"
+    with-origin-branch = "!f() { local branch=origin/$(git rev-parse --abbrev-ref HEAD); if git branch -a | grep \"$branch\" > /dev/null; then $@ $branch; else echo \"Branch not found: $branch\"; exit 1; fi }; f"
+    remote-origin-http-url = "!f() { git config --get remote.origin.url | pcregrep -o '(?<=git@).*(?=\\.git)' | sed -e 's|:|/|g' | xargs printf 'https://%s\n'; }; f"
+    s  = status --branch --short
+    st = status --branch --short
+    # Do not show untracked files.  Show not staged and staged.
+    stt = status -uno
+    su = submodule update
+    b  = branch
+    br = branch
+    com = commit
+    coma = commit --amend --no-edit
+    comm = commit --amend --allow-empty
+    cho = checkout
+    chp = cherry-pick -n
+    mff = merge --ff
+    mffo = "!f() { git with-origin-branch git merge --ff; }; f"
+    mt = mergetool
+    d     = diff
+    ds    = diff --stat
+    dw    = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
+    diffs = diff --stat
+    diffw = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
+    dt = difftool -y
+    l    = log --date=short --decorate=short --format=olmid
+    gr   = log --graph --date=iso --decorate=short --format=olmid -20
+    grl  = log --graph --date=iso --decorate=short --format=olmid
+    grlc = log --graph --date=iso --decorate=short --format=olmidc
+    gra  = log --graph --date=iso --decorate=short --format=olmid --all
+    gro  = "!f() { git with-origin-branch git gr; }; f"
+    maybe-pr-commit = "!f() { test -n \"$1\" && git log --ancestry-path --merges --reverse --oneline $1...${2:-HEAD} | grep 'Merge pull request #' | head -1; }; f"
+    maybe-pr-url    = "!f() { git maybe-pr-commit $1 | pcregrep -o '(?<=Merge pull request #)\\d+(?= )' | xargs printf '%s/pull/%s\n' $(git remote-origin-http-url); }; f"
+    delete-merged-branches = "!f() { git branch --merged ${1:-HEAD} | grep -v \\* | xargs -I % git branch -D % ; }; f"
 [push]
-        default = current
+    default = current
 [branch]
-        autosetupmerge = false
+    autosetupmerge = false
 [diff]
-        tool = vimdiff
-        algorithm = patience
+    tool = vimdiff
+    algorithm = patience
 [merge]
-        ff = false
-        tool = vimdiff3
+    ff = false
+    tool = vimdiff3
 [mergetool]
-        keepBackup = false
+    keepBackup = false
 [mergetool "vimdiff3"]
-        cmd = git_merge_wrapper3 \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+    cmd = git_merge_wrapper3 \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
 
 
 [url "git@github.com:"]
-        insteadof = "https://github.com/"
-        pushinsteadof = "https://github.com/"
-        pushinsteadof = "git://github.com/"
+    insteadof = "https://github.com/"
+    pushinsteadof = "https://github.com/"
+    pushinsteadof = "git://github.com/"
 [url "git@github.com:USERNAME/"]
-        insteadof = gh:
+    insteadof = gh:
 
 [ghq]
-        root = ~/src
+    root = ~/src
 [credential "https://source.developers.google.com"]
-	helper = gcloud.sh
+    helper = gcloud.sh

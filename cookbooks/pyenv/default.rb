@@ -2,9 +2,9 @@ node.reverse_merge!(
   pyenv: {
     user: node[:user],
     scheme: 'git',
-    global: '3.6.10',
+    global: '3.8.2',
     versions: %w[
-      3.6.10
+      3.8.2
     ],
   }
 )

@@ -73,5 +73,9 @@
 
 [ghq]
     root = ~/src
+
+[credential "https://github.com"]
+	helper = 
+	helper = !/home/keno/.local/bin/gh auth git-credential
 [credential "https://source.developers.google.com"]
     helper = gcloud.sh

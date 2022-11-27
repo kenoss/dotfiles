@@ -23,6 +23,10 @@ define :github_binary, version: nil, repository: nil, archive: nil, binary_path:
   archive = params[:archive]
   url = "https://github.com/#{params[:repository]}/releases/download/#{params[:version]}/#{archive}"
 
+  execute "mkdir -p #{ENV['USER_HOME']}/.local/bin" do
+    not_if "test -d #{ENV['USER_HOME']}/.local/bin"
+  end
+
   if archive.end_with?('.zip')
     extract = "unzip -o"
   elsif archive.end_with?('.tar.gz')

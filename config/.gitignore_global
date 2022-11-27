@@ -6,5 +6,4 @@
 .envrc
 tags
 TAGS
-.mypy_cache
 flycheck_*

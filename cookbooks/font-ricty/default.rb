@@ -1,10 +1,10 @@
 case node[:platform]
-when 'darwin'
+when 'darwin' then
   fonts_dir = "#{ENV['USER_HOME']}/Library/Fonts"
-when 'ubuntu'
+when 'ubuntu', 'debian', 'arch' then
   fonts_dir = "#{ENV['USER_HOME']}/.fonts"
 else
-  raise 'not supported platform'
+  raise "not supported platform: #{node[:platform]}"
 end
 
 directory fonts_dir do
@@ -43,11 +43,11 @@ ls_output_after =  run_command("ls -1 #{fonts_dir}/Ricty* | wc -l", error: false
 
 case node[:platform]
 when 'darwin'
-when 'ubuntu'
+when 'ubuntu', 'debian', 'arch' then
   execute 'fc-cache -fv' do
     not_if ls_output_before == ls_output_after
     user node[:user]
   end
 else
-  raise 'not supported platform'
+  raise "not supported platform: #{node[:platform]}"
 end

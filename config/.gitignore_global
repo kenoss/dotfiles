@@ -7,3 +7,6 @@
 tags
 TAGS
 flycheck_*
+
+# Rust
+proptest-regressions

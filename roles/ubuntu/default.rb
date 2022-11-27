@@ -25,10 +25,10 @@ include_cookbook 'direnv'
 include_cookbook 'font-ricty'
 
 dotfile '.config/vim'
-link File.join(ENV['HOME'], ".vim") do
-  to File.join(ENV['HOME'], ".config/vim")
+link File.join(ENV['USER_HOME'], ".vim") do
+  to File.join(ENV['USER_HOME'], ".config/vim")
   user node[:user]
-  not_if "test -e #{File.join(ENV['HOME'], ".vim")}"
+  not_if "test -e #{File.join(ENV['USER_HOME'], ".vim")}"
 end
 
 dotfile '.config/alacritty'

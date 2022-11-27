@@ -4,7 +4,7 @@ node.reverse_merge!(
 
 define :dotfile, source: nil do
   source = params[:source] || params[:name]
-  dest = File.join(ENV['HOME'], params[:name])
+  dest = File.join(ENV['USER_HOME'], params[:name])
   dir = File.dirname(dest)
   directory dir do
     user node[:user]
@@ -19,7 +19,7 @@ end
 
 define :github_binary, version: nil, repository: nil, archive: nil, binary_path: nil do
   cmd = params[:name]
-  bin_path = "#{ENV['HOME']}/.local/bin/#{cmd}"
+  bin_path = "#{ENV['USER_HOME']}/.local/bin/#{cmd}"
   archive = params[:archive]
   url = "https://github.com/#{params[:repository]}/releases/download/#{params[:version]}/#{archive}"
 

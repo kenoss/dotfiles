@@ -11,7 +11,7 @@ node.reverse_merge!(
 
 
 
-node[:ndenv][:ndenv_root] = File.join(ENV['HOME'], '.ndenv')
+node[:ndenv][:ndenv_root] = File.join(ENV['USER_HOME'], '.ndenv')
 
 
 
@@ -40,7 +40,7 @@ end
 
 ndenv_init = "
   export NDENV_ROOT=#{ndenv[:ndenv_root]}
-  export PATH=\"#{ENV['HOME']}/.ndenv/bin:$PATH\"
+  export PATH=\"#{ENV['USER_HOME']}/.ndenv/bin:$PATH\"
   eval \"$(ndenv init -)\"
 "
 

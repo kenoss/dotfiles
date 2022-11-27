@@ -1,8 +1,8 @@
 case node[:platform]
 when 'darwin'
-  fonts_dir = "#{ENV['HOME']}/Library/Fonts"
+  fonts_dir = "#{ENV['USER_HOME']}/Library/Fonts"
 when 'ubuntu'
-  fonts_dir = "#{ENV['HOME']}/.fonts"
+  fonts_dir = "#{ENV['USER_HOME']}/.fonts"
 else
   raise 'not supported platform'
 end

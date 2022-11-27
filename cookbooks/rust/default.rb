@@ -7,7 +7,7 @@ when 'arch'
   yaourt 'rust-src'
 else
   local_ruby_block 'install rust' do
-    rustc_path = "#{ENV['HOME']}/.cargo/bin/rustc"
+    rustc_path = "#{ENV['USER_HOME']}/.cargo/bin/rustc"
 
     block do
       system("sudo -E -u #{node[:user]} bash -c 'curl https://sh.rustup.rs -sSf | sh'")
@@ -20,9 +20,9 @@ else
   end
 end
 
-unless ENV['PATH'].include?("#{ENV['HOME']}/.cargo/bin:")
+unless ENV['PATH'].include?("#{ENV['USER_HOME']}/.cargo/bin:")
   MItamae.logger.info('Prepending ~/.cargo/bin to PATH during this execution')
-  ENV['PATH'] = "#{ENV['HOME']}/.cargo/bin:#{ENV['PATH']}"
+  ENV['PATH'] = "#{ENV['USER_HOME']}/.cargo/bin:#{ENV['PATH']}"
 end
 
 execute 'rustup component add rust-src' do

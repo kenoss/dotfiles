@@ -29,7 +29,7 @@
     coma = commit --amend --no-edit
     comm = commit --amend --allow-empty
     cho = checkout
-    chp = cherry-pick -n
+    chp = cherry-pick
     mff = merge --ff
     mffo = "!f() { git with-origin-branch git merge --ff; }; f"
     mt = mergetool

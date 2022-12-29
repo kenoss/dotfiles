@@ -11,7 +11,7 @@ node.reverse_merge!(
 
 
 
-node[:pyenv][:pyenv_root] = File.join(ENV['USER_HOME'], '.pyenv')
+node[:pyenv][:pyenv_root] = File.join(node[:home], '.pyenv')
 
 
 

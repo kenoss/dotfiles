@@ -1,5 +1,5 @@
 define :install_rust do
-  rustc_path = "#{ENV['USER_HOME']}/.cargo/bin/rustc"
+  rustc_path = "#{node[:home]}/.cargo/bin/rustc"
 
   execute 'curl -sSf https://sh.rustup.rs -o /tmp/rustup-init.sh' do
     not_if "test -f #{rustc_path}"
@@ -22,9 +22,9 @@ end
 
 install_rust ""
 
-unless ENV['PATH'].include?("#{ENV['USER_HOME']}/.cargo/bin:")
+unless ENV['PATH'].include?("#{node[:home]}/.cargo/bin:")
   MItamae.logger.info('Prepending ~/.cargo/bin to PATH during this execution')
-  ENV['PATH'] = "#{ENV['USER_HOME']}/.cargo/bin:#{ENV['PATH']}"
+  ENV['PATH'] = "#{node[:home]}/.cargo/bin:#{ENV['PATH']}"
 end
 
 execute "sudo -E -u #{node[:user]} rustup component add rust-src" do

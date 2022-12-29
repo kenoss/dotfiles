@@ -24,13 +24,6 @@ include_cookbook 'direnv'
 
 include_cookbook 'font-ricty'
 
-dotfile '.config/vim'
-link File.join(node[:home], ".vim") do
-  to File.join(node[:home], ".config/vim")
-  user node[:user]
-  not_if "test -e #{File.join(node[:home], ".vim")}"
-end
-
 dotfile '.config/alacritty'
 dotfile '.config/karabiner'
 dotfile '.config/pet'

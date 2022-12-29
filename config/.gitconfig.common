@@ -8,8 +8,8 @@
 [color]
     ui = auto
 [pager]
-    diff = delta -s --navigate --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
-    show = delta -s --navigate --plus-color="#012800" --minus-color="#340001" --theme='Monokai Extended'
+    diff = delta -s --navigate --syntax-theme='Monokai Extended'
+    show = delta -s --navigate --syntax-theme='Monokai Extended'
     # Pseudo `less -SF`.
     gr = cut -c 1-$(($(tput cols) + 21)) && echo
 [pretty]

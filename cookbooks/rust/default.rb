@@ -1,36 +1,38 @@
-case node[:platform]
-when 'arch'
-  package 'rust'
-  package 'cargo'
+define :install_rust do
+  rustc_path = "#{ENV['USER_HOME']}/.cargo/bin/rustc"
 
-  include_cookbook 'yaourt'
-  yaourt 'rust-src'
-else
+  execute 'curl -sSf https://sh.rustup.rs -o /tmp/rustup-init.sh' do
+    not_if "test -f #{rustc_path}"
+  end
+
   local_ruby_block 'install rust' do
-    rustc_path = "#{ENV['USER_HOME']}/.cargo/bin/rustc"
 
     block do
-      system("sudo -E -u #{node[:user]} bash -c 'curl https://sh.rustup.rs -sSf | sh'")
+
+      system("sudo -E -u #{node[:user]} bash /tmp/rustup-init.sh --default-toolchain stable --profile default --component rustfmt -y")
 
       until File.exist?(rustc_path)
         sleep 1
       end
     end
+
     not_if "test -f #{rustc_path}"
   end
 end
+
+install_rust ""
 
 unless ENV['PATH'].include?("#{ENV['USER_HOME']}/.cargo/bin:")
   MItamae.logger.info('Prepending ~/.cargo/bin to PATH during this execution')
   ENV['PATH'] = "#{ENV['USER_HOME']}/.cargo/bin:#{ENV['PATH']}"
 end
 
-execute 'rustup component add rust-src' do
-  not_if 'rustup component list | grep "rust-src (installed)" >/dev/null'
+execute "sudo -E -u #{node[:user]} rustup component add rust-src" do
+  not_if "sudo -E -u #{node[:user]} rustup component list | grep 'rust-src (installed)' >/dev/null"
 end
 
 define :cargo do
-  execute "cargo install --verbose #{params[:name]}" do
-    not_if %Q[cargo install --list | grep "^#{params[:name]} "]
+  execute "sudo -E -u #{node[:user]} cargo install --verbose #{params[:name]}" do
+    not_if %Q[sudo -E -u #{node[:user]} cargo install --list | grep "^#{params[:name]} "]
   end
 end

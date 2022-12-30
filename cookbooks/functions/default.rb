@@ -1,7 +1,3 @@
-node.reverse_merge!(
-  os: run_command('uname').stdout.strip.downcase,
-)
-
 define :dotfile, source: nil do
   source = params[:source] || params[:name]
   dest = File.join(node[:home], params[:name])

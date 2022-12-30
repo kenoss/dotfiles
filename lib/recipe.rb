@@ -14,4 +14,8 @@ node.reverse_merge!(
   arch: run_command('uname -m', error: false).stdout.strip,
 )
 
+node.reverse_merge!(
+  os: run_command('uname', error: false).stdout.strip.downcase,
+)
+
 include_role node[:platform]

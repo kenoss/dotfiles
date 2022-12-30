@@ -1,10 +1,10 @@
-case node[:platform]
+case node[:os]
 when 'darwin' then
   fonts_dir = "#{node[:home]}/Library/Fonts"
-when 'ubuntu', 'debian', 'arch' then
+when 'linux' then
   fonts_dir = "#{node[:home]}/.fonts"
 else
-  raise "not supported platform: #{node[:platform]}"
+  raise "not supported os: #{node[:os]}"
 end
 
 directory fonts_dir do
@@ -41,13 +41,13 @@ ricty_font 'Ricty Diminished Regular for Powerline.ttf'
 ls_output_after =  run_command("ls -1 #{fonts_dir}/Ricty* | wc -l", error: false).stdout
 
 
-case node[:platform]
+case node[:os]
 when 'darwin'
-when 'ubuntu', 'debian', 'arch' then
+when 'linux' then
   execute 'fc-cache -fv' do
     not_if ls_output_before == ls_output_after
     user node[:user]
   end
 else
-  raise "not supported platform: #{node[:platform]}"
+  raise "not supported os: #{node[:os]}"
 end

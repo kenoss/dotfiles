@@ -1,7 +1,6 @@
 # -*- mode: gitconfig -*-
 
 [core]
-    excludesfile = ~/.gitignore_global
     editor = vim
 [interactive]
     diffFilter = delta --color-only

@@ -1,7 +1,7 @@
 # -*- mode: gitconfig -*-
 
 [include]
-        path = .gitconfig.common
+        path = ~/.config/git/config.common
 [user]
         name = keno
         email = keno.ss57@gmail.com

@@ -1,5 +1,5 @@
 package 'git'
 
-dotfile '.gitconfig.common'
-dotfile '.gitconfig.keno'
-dotfile '.gitignore_global'
+dotfile '.config/git/config.common'
+dotfile '.config/git/config.keno'
+dotfile '.config/git/ignore'

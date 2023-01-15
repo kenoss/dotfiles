@@ -1,5 +1,12 @@
+# Emacs backup file
 *~
+# Emacs autosave file
 \#*\#
+# Emacs lock file
+.\#*
+# Vim swap file
+.*.swp
+
 .DS_Store
 .agignore
 .rgignore

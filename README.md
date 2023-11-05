@@ -5,8 +5,10 @@ My development environment
 ## Usage
 
 ```sh
-./install.sh desktop -n  # dry-run
-./install.sh desktop     # apply
+$ git clone https://github.com/kenoss/dotfiles ~/src/github.com/kenoss/dotfiles
+
+$ ./install.sh desktop -n  # dry-run
+$ ./install.sh desktop     # apply
 ```
 
 ## Note

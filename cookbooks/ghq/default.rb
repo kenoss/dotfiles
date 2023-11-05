@@ -11,6 +11,7 @@ github_binary 'ghq' do
   repository 'motemen/ghq'
   version 'v1.3.0'
   archive "ghq_#{node[:os]}_#{arch}.zip"
+  binary_path "ghq_#{node[:os]}_#{arch}/ghq"
 end
 
 include_cookbook 'git'

@@ -13,8 +13,10 @@ package 'inotify-tools'
 package 'jq'
 # pcregrep
 package 'pcre'
+package 'rsync'
 package 'tig'
 package 'tmux'
+package 'xorg-xauth'
 package 'xsel'
 
 # Config

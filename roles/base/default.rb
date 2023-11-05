@@ -8,6 +8,8 @@ when 'ubuntu', 'debian' then
 when 'arch' then
   package 'base-devel'
   package 'pkgconf'
+  package 'unzip'
+  package 'cmake'
 else
   raise "not supported platform: #{node[:platform]}"
 end

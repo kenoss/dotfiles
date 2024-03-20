@@ -48,7 +48,7 @@ define :github_binary, version: nil, repository: nil, archive: nil, binary_path:
     end
   end
 
-  execute "install -m 755 -o #{node[:user]} -g #{node[:user]} #{src} #{bin_path}" do
+  execute "install -m 755 -o #{node[:user]} -g \"$(id #{node[:user]} -g)\" #{src} #{bin_path}" do
     not_if "test -f #{bin_path}"
   end
 end

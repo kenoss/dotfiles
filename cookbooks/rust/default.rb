@@ -27,12 +27,15 @@ unless ENV['PATH'].include?("#{node[:home]}/.cargo/bin:")
   ENV['PATH'] = "#{node[:home]}/.cargo/bin:#{ENV['PATH']}"
 end
 
-execute "sudo -E -u #{node[:user]} rustup component add rust-src" do
-  not_if "sudo -E -u #{node[:user]} rustup component list | grep 'rust-src (installed)' >/dev/null"
+rustup = "#{node[:home]}/.cargo/bin/rustup"
+cargo = "#{node[:home]}/.cargo/bin/cargo"
+
+execute "sudo -E -u #{node[:user]} #{rustup} component add rust-src" do
+  not_if "sudo -E -u #{node[:user]} #{rustup} component list | grep 'rust-src (installed)' >/dev/null"
 end
 
 define :cargo do
-  execute "sudo -E -u #{node[:user]} cargo install --verbose #{params[:name]}" do
-    not_if %Q[sudo -E -u #{node[:user]} cargo install --list | grep "^#{params[:name]} "]
+  execute "sudo -E -u #{node[:user]} #{cargo} install --verbose #{params[:name]}" do
+    not_if %Q[sudo -E -u #{node[:user]} #{cargo} install --list | grep "^#{params[:name]} "]
   end
 end

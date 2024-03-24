@@ -3,5 +3,5 @@
 [include]
         path = ~/.config/git/config.common
 [user]
-        name = keno
+        name = kenoss
         email = keno.ss57@gmail.com

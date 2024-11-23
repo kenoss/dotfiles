@@ -7,8 +7,8 @@
 [color]
     ui = auto
 [pager]
-    diff = delta -s --navigate --syntax-theme='Monokai Extended'
-    show = delta -s --navigate --syntax-theme='Monokai Extended'
+    diff = delta
+    show = delta
     # Pseudo `less -SF`.
     gr = cut -c 1-$(($(tput cols) + 21)) && echo
 [pretty]
@@ -85,3 +85,8 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
+[delta]
+  side-by-side = true
+  navigate = true
+  syntax-theme = Monokai Extended

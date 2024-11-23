@@ -4,55 +4,18 @@ foreground = "0x909090"
 
 [font]
 size = 14.0
+normal = {family = "Ricty Diminished Discord for Powerline", style = "Regular"}
+bold   = {family = "Ricty Diminished Discord for Powerline", style = "Bold"}
+italic = {family = "Ricty Diminished Discord for Powerline", style = "Italic"}
 
-[font.bold]
-family = "Ricty Diminished Discord for Powerline"
-style = "Bold"
-
-[font.italic]
-family = "Ricty Diminished Discord for Powerline"
-style = "Italic"
-
-[font.normal]
-family = "Ricty Diminished Discord for Powerline"
-style = "Regular"
-
-[[keyboard.bindings]]
-chars = "\u0014\u0004"
-key = "D"
-mods = "Super"
-
-[[keyboard.bindings]]
-chars = "\u0014\b"
-key = "H"
-mods = "Super"
-
-[[keyboard.bindings]]
-chars = "\u0014\u0014"
-key = "T"
-mods = "Super"
-
-[[keyboard.bindings]]
-chars = "\u0014\u000E"
-key = "N"
-mods = "Super"
-
-[[keyboard.bindings]]
-chars = "\u0014D"
-key = "D"
-mods = "Super|Shift"
-
-[[keyboard.bindings]]
-chars = "\u0014H"
-key = "H"
-mods = "Super|Shift"
-
-[[keyboard.bindings]]
-chars = "\u0014T"
-key = "T"
-mods = "Super|Shift"
-
-[[keyboard.bindings]]
-chars = "\u0014N"
-key = "N"
-mods = "Super|Shift"
+[keyboard]
+bindings = [
+  {mods = "Super",       key = "D", chars = "\u0014\u0004"},
+  {mods = "Super",       key = "H", chars = "\u0014\u0008"},
+  {mods = "Super",       key = "T", chars = "\u0014\u0014"},
+  {mods = "Super",       key = "N", chars = "\u0014\u000E"},
+  {mods = "Super|Shift", key = "D", chars = "\u0014\u0044"},
+  {mods = "Super|Shift", key = "H", chars = "\u0014\u0048"},
+  {mods = "Super|Shift", key = "T", chars = "\u0014\u0054"},
+  {mods = "Super|Shift", key = "N", chars = "\u0014\u004e"},
+]

@@ -11,6 +11,7 @@ load-zsh-config config/path.sh
 load-zsh-config config/env.sh
 load-zsh-config config/alias.sh
 load-zsh-config config/function-utils.sh
+load-zsh-config config/hook.sh
 load-zsh-config config/command-utils.sh
 load-zsh-config config/command-histgrep.sh
 load-zsh-config config/command-peco.sh

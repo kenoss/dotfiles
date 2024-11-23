@@ -1,0 +1,58 @@
+[colors.primary]
+background = "0x101010"
+foreground = "0x909090"
+
+[font]
+size = 14.0
+
+[font.bold]
+family = "Ricty Diminished Discord for Powerline"
+style = "Bold"
+
+[font.italic]
+family = "Ricty Diminished Discord for Powerline"
+style = "Italic"
+
+[font.normal]
+family = "Ricty Diminished Discord for Powerline"
+style = "Regular"
+
+[[keyboard.bindings]]
+chars = "\u0014\u0004"
+key = "D"
+mods = "Super"
+
+[[keyboard.bindings]]
+chars = "\u0014\b"
+key = "H"
+mods = "Super"
+
+[[keyboard.bindings]]
+chars = "\u0014\u0014"
+key = "T"
+mods = "Super"
+
+[[keyboard.bindings]]
+chars = "\u0014\u000E"
+key = "N"
+mods = "Super"
+
+[[keyboard.bindings]]
+chars = "\u0014D"
+key = "D"
+mods = "Super|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0014H"
+key = "H"
+mods = "Super|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0014T"
+key = "T"
+mods = "Super|Shift"
+
+[[keyboard.bindings]]
+chars = "\u0014N"
+key = "N"
+mods = "Super|Shift"

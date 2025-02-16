@@ -7,6 +7,7 @@
 
 source "$ZDOTDIR"/config/antigen.zsh
 
+load-zsh-config config/util.sh
 load-zsh-config config/path.sh
 load-zsh-config config/env.sh
 load-zsh-config config/alias.sh

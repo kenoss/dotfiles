@@ -93,5 +93,5 @@ eval "$(direnv hook zsh)"
 
 export CLOUDSDK_PYTHON=python
 
-source "$HOME/.local/bin/google-cloud-sdk/completion.zsh.inc"
-source "$HOME/.local/bin/google-cloud-sdk/path.zsh.inc"
+source-if-exist "$HOME/.local/bin/google-cloud-sdk/completion.zsh.inc"
+source-if-exist "$HOME/.local/bin/google-cloud-sdk/path.zsh.inc"

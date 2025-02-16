@@ -11,12 +11,20 @@ include_cookbook 'direnv'
 
 package 'inotify-tools'
 package 'jq'
-# pcregrep
-package 'pcre'
+case node[:platform]
+when 'debian' then
+  package 'pcregrep'
+else
+  package 'pcre'
+end
 package 'rsync'
 package 'tig'
 package 'tmux'
+case node[:platform]
+when 'debian' then
+else
 package 'xorg-xauth'
+end
 package 'xsel'
 
 # Config

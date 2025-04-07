@@ -1,19 +1,5 @@
 # -*- mode: gitconfig -*-
 
-[core]
-    editor = vim
-[interactive]
-    diffFilter = delta --color-only
-[color]
-    ui = auto
-[pager]
-    diff = delta
-    show = delta
-    # Pseudo `less -SF`.
-    gr = cut -c 1-$(($(tput cols) + 21)) && echo
-[pretty]
-    olmid  = format:%C(yellow)%h %C(reset)[%ad] %C(blue)%an %C(red)%d %C(reset)%s
-    olmidc = format:%C(yellow)%h %C(reset)[%ad] %C(blue)%an %C(green)%cn %C(red)%d %C(reset)%s
 [alias]
     with-origin-branch = "!f() { local branch=origin/$(git rev-parse --abbrev-ref HEAD); if git branch -a | grep \"$branch\" > /dev/null; then $@ $branch; else echo \"Branch not found: $branch\"; exit 1; fi }; f"
     remote-origin-http-url = "!f() { git config --get remote.origin.url | pcregrep -o '(?<=git@).*(?=\\.git)' | sed -e 's|:|/|g' | xargs printf 'https://%s\n'; }; f"
@@ -49,12 +35,12 @@
     delete-merged-branches = "!f() { git branch --merged ${1:-HEAD} | grep -v \\* | xargs -I % git branch -D % ; }; f"
     rebasec = rebase --continue
     rebasea = rebase --abort
-[push]
-    default = current
-[tag]
-    sort = version:refname
 [branch]
     autosetupmerge = false
+[color]
+    ui = auto
+[core]
+    editor = vim
 [diff]
     algorithm = histogram
     colorMoved = plain
@@ -66,9 +52,22 @@
     tool = vimdiff3
 [mergetool]
     keepBackup = false
-[mergetool "vimdiff3"]
-    cmd = git_merge_wrapper3 \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+[interactive]
+    diffFilter = delta --color-only
+[pager]
+    diff = delta
+    show = delta
+    # Pseudo `less -SF`.
+    gr = cut -c 1-$(($(tput cols) + 21)) && echo
+[pretty]
+    olmid  = format:%C(yellow)%h %C(reset)[%ad] %C(blue)%an %C(red)%d %C(reset)%s
+    olmidc = format:%C(yellow)%h %C(reset)[%ad] %C(blue)%an %C(green)%cn %C(red)%d %C(reset)%s
+[push]
+    default = current
+[tag]
+    sort = version:refname
 
+# Per provider settings
 [url "https://"]
     insteadOf = git://
 [url "git@github.com:"]
@@ -78,22 +77,25 @@
 [url "git@github.com:USERNAME/"]
     insteadof = gh:
 
-[ghq]
-    root = ~/src
-
+# Credentials
 [credential "https://github.com"]
-	helper = 
-	helper = !/home/keno/.local/bin/gh auth git-credential
+    helper = 
+    helper = !/home/keno/.local/bin/gh auth git-credential
 [credential "https://source.developers.google.com"]
     helper = gcloud.sh
 
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-
+# Tools
 [delta]
   side-by-side = true
   navigate = true
   syntax-theme = Monokai Extended
+[ghq]
+    root = ~/src
+[mergetool "vimdiff3"]
+    cmd = git_merge_wrapper3 \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true

@@ -51,6 +51,8 @@
     rebasea = rebase --abort
 [push]
     default = current
+[tag]
+    sort = version:refname
 [branch]
     autosetupmerge = false
 [diff]

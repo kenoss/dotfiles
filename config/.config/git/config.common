@@ -52,6 +52,8 @@
     tool = vimdiff3
 [mergetool]
     keepBackup = false
+[init]
+    defaultBranch = main
 [interactive]
     diffFilter = delta --color-only
 [pager]

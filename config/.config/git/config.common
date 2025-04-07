@@ -39,16 +39,27 @@
     autosetupmerge = false
 [color]
     ui = auto
+[commit]
+    verbose = true
 [core]
     editor = vim
+    fsmonitor = true
+    untrackedCache = true
 [diff]
     algorithm = histogram
     colorMoved = plain
     mnemonicPrefix = true
     renames = true
     tool = vimdiff
+[help]
+    autocorrect = prompt
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
 [merge]
     ff = false
+    conflictstyle = zdiff3 
     tool = vimdiff3
 [mergetool]
     keepBackup = false
@@ -66,6 +77,9 @@
     olmidc = format:%C(yellow)%h %C(reset)[%ad] %C(blue)%an %C(green)%cn %C(red)%d %C(reset)%s
 [push]
     default = current
+[rerere]
+    enabled = true
+    autoupdate = true
 [tag]
     sort = version:refname
 

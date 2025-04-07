@@ -17,3 +17,6 @@ flycheck_*
 
 # Rust
 proptest-regressions
+
+# worktree
+/w/

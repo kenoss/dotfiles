@@ -5,6 +5,7 @@ when 'darwin' then
 when 'ubuntu', 'debian' then
   package 'build-essential'
   package 'pkg-config'
+  package 'libssl-dev'
 when 'arch' then
   package 'base-devel'
   package 'pkgconf'

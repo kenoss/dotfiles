@@ -9,15 +9,15 @@ when 'ubuntu', 'debian' then
 when 'arch' then
   package 'base-devel'
   package 'pkgconf'
-  package 'unzip'
   package 'cmake'
+  package 'unzip'
 when 'fedora' then
   package 'make'
   package 'automake'
+  package 'cmake'
   package 'gcc'
   package 'gcc-c++'
   package 'openssl-devel'
-  package 'cmake'
   package 'fontconfig-devel'
 else
   raise "not supported platform: #{node[:platform]}"

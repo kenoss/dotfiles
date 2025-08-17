@@ -1,12 +1,5 @@
 include_role 'standard'
 
-package 'rofi'
+include_cookbook 'xmonad'
 
-case node[:platform]
-when 'fedora' then
-  # The package 'xmonad' includes 'ghc-xmonad' and 'ghc-xmonad-contrib'
-  package 'xmonad'
-else
-  package 'xmonad'
-  package 'xmonad-contrib'
-end
+package 'rofi'

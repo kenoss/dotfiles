@@ -39,7 +39,6 @@ dotfile '.uim.d'
 include_cookbook 'rust'
 
 cargo 'cargo-edit'
-cargo 'cargo-script'
 cargo 'cargo-update'
 cargo 'cargo-watch'
 

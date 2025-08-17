@@ -14,6 +14,8 @@ package 'jq'
 case node[:platform]
 when 'debian' then
   package 'pcregrep'
+when 'fedora' then
+  package 'pcre-tools'
 else
   package 'pcre'
 end
@@ -22,8 +24,10 @@ package 'tig'
 package 'tmux'
 case node[:platform]
 when 'debian' then
+when 'fedora' then
+  package 'xorg-x11-xauth'
 else
-package 'xorg-xauth'
+  package 'xorg-xauth'
 end
 package 'xsel'
 

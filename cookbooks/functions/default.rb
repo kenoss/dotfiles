@@ -21,6 +21,7 @@ define :github_binary, version: nil, repository: nil, archive: nil, binary_path:
 
   execute "mkdir -p #{node[:home]}/.local/bin" do
     not_if "test -d #{node[:home]}/.local/bin"
+    user node[:user]
   end
 
   if archive.end_with?('.zip')
